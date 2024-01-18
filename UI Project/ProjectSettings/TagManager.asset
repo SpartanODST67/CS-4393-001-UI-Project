@@ -3,15 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Door
+  - Turn
+  - Pathway
+  - Ground
+  - Character
+  - Position Saver
+  - Interaction UI
+  - Player Party
+  - Enemy Party
+  - Player Battle Station
+  - Enemy Battle Station
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Interactable
   - 
   - 
   - 
