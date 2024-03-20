@@ -15,6 +15,7 @@ TagManager:
   - Enemy Party
   - Player Battle Station
   - Enemy Battle Station
+  - Sound
   layers:
   - Default
   - TransparentFX
