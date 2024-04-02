@@ -5,16 +5,20 @@ using Yarn.Unity;
 
 public class Conversation : MonoBehaviour, Interactable
 {
+    [Header("Interactable Info")]
     [SerializeField] string prompt = "Talk";
     [SerializeField] int characterIndex; //Difficult to read
 
     //Serialized to be visable in editor.
+    [Header("Relationship Info")]
+    //[SerializeField] 
     [SerializeField] float relationshipLevel = 0;
     [SerializeField] string characterName; //Used to denote which dialogue node to start
     [SerializeField] bool isQuestComplete;
     [SerializeField] bool isOnTeam;
     [SerializeField] bool isLevelUpReady;
 
+    [Header("Yarn Info")]
     [SerializeField] DialogueRunner dialogueRunner;
     [SerializeField] string startNode;
     private RelationshipBank relationshipBank;
