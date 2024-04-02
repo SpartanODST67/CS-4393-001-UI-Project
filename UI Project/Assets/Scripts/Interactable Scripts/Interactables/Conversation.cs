@@ -17,7 +17,7 @@ public class Conversation : MonoBehaviour, Interactable
 
     [SerializeField] DialogueRunner dialogueRunner;
     [SerializeField] string startNode;
-    private RelationshipBank relationshipBank;
+    [SerializeField] RelationshipBank relationshipBank;
     private StateManager stateManager;
     private InMemoryVariableStorage storage;
     public string interactionPrompt => prompt;
@@ -43,15 +43,15 @@ public class Conversation : MonoBehaviour, Interactable
     private void withdrawRelationshipValues()
     {
         relationshipLevel = relationshipBank.getRelationshipLevel(characterIndex);
-        characterName = relationshipBank.getCharacterName(characterIndex);
-        isQuestComplete = relationshipBank.isQuestComplete(characterIndex);
+        //characterName = relationshipBank.getCharacterName(characterIndex);
+        //isQuestComplete = relationshipBank.isQuestComplete(characterIndex);
         isOnTeam = relationshipBank.isOnTeam(characterIndex);
-        isLevelUpReady = relationshipBank.isLevelUpReady(characterIndex);
+        //isLevelUpReady = relationshipBank.isLevelUpReady(characterIndex);
     }
 
     private void updateYarnValues()
     {
-        storage.SetValue("$levelUp", isLevelUpReady);
+        //storage.SetValue("$levelUp", isLevelUpReady);
         storage.SetValue("$onTeam", isOnTeam);
         storage.SetValue("$relationshipLevel", relationshipLevel);
         storage.SetValue("$questComplete", isQuestComplete);

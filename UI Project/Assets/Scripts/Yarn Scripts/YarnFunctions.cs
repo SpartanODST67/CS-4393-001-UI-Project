@@ -39,7 +39,7 @@ public class YarnFunctions : MonoBehaviour
     {
         //Temp
         RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
-        relationshipBank.setQuestCompletion(characterIndex, false);
+        //relationshipBank.setQuestCompletion(characterIndex, false);
         Debug.Log("You still need to implement this dumbass.");
     }
 
