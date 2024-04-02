@@ -337,50 +337,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &934262748
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 934262750}
-  - component: {fileID: 934262749}
-  m_Layer: 0
-  m_Name: Relationship Bank
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &934262749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934262748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77726cf823b9aff40bff3d155f7afd04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &934262750
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934262748}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.537608, y: 0.70162195, z: 7.9798565}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &938112720
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +635,7 @@ MonoBehaviour:
   isLevelUpReady: 0
   dialogueRunner: {fileID: 1273752722}
   startNode: Donald
+  relationshipBank: {fileID: 11400000, guid: 746d1f01c32ef9548b1af342c34438ed, type: 2}
 --- !u!4 &974811045
 Transform:
   m_ObjectHideFlags: 0
@@ -1530,7 +1487,6 @@ SceneRoots:
   - {fileID: 1682068150}
   - {fileID: 938112725}
   - {fileID: 974811045}
-  - {fileID: 934262750}
   - {fileID: 215041225029124958}
   - {fileID: 146361816}
   - {fileID: 1220207224}
