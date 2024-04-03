@@ -11,12 +11,13 @@ public class Conversation : MonoBehaviour, Interactable
 
     //Serialized to be visable in editor.
     [Header("Relationship Info")]
-    //[SerializeField] 
-    [SerializeField] float relationshipLevel = 0;
+    [SerializeField] int relationshipLevel = 0;
+    [SerializeField] int relationshipPoints = 0;
     [SerializeField] string characterName; //Used to denote which dialogue node to start
     [SerializeField] bool isQuestComplete;
     [SerializeField] bool isOnTeam;
     [SerializeField] bool isLevelUpReady;
+    [SerializeField] List<int> levelUpThresholds = new List<int>();
 
     [Header("Yarn Info")]
     [SerializeField] DialogueRunner dialogueRunner;
@@ -28,7 +29,6 @@ public class Conversation : MonoBehaviour, Interactable
 
     void Start()
     {
-        relationshipBank = FindObjectOfType<RelationshipBank>();
         storage = FindObjectOfType<InMemoryVariableStorage>();
         stateManager = FindObjectOfType<StateManager>();
     }
@@ -46,11 +46,9 @@ public class Conversation : MonoBehaviour, Interactable
 
     private void withdrawRelationshipValues()
     {
-        relationshipLevel = relationshipBank.getRelationshipLevel(characterIndex);
-        //characterName = relationshipBank.getCharacterName(characterIndex);
-        //isQuestComplete = relationshipBank.isQuestComplete(characterIndex);
-        isOnTeam = relationshipBank.isOnTeam(characterIndex);
-        //isLevelUpReady = relationshipBank.isLevelUpReady(characterIndex);
+        relationshipPoints = relationshipBank.GetRelationshipPoints(characterIndex);
+        relationshipLevel = relationshipBank.GetRelationshipLevel(characterIndex);
+        isOnTeam = relationshipBank.IsOnTeam(characterIndex);
     }
 
     private void updateYarnValues()

@@ -17,20 +17,20 @@ public class YarnFunctions : MonoBehaviour
     public static void relationshipLevelUp(int characterIndex)
     {
         RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
-        relationshipBank.setRelationshipLevel(characterIndex, relationshipBank.getRelationshipLevel(characterIndex) + 1);
+        relationshipBank.SetRelationshipLevel(characterIndex, relationshipBank.GetRelationshipLevel(characterIndex) + 1);
     }
 
     [YarnCommand("updateOnTeamStatus")]
     public static void updateOnTeamStatus(int characterIndex)
     {
         RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
-        if(relationshipBank.isOnTeam(characterIndex))
+        if(relationshipBank.IsOnTeam(characterIndex))
         {
-            relationshipBank.setOnTeam(characterIndex, false);
+            relationshipBank.SetOnTeam(characterIndex, false);
         }
         else
         {
-            relationshipBank.setOnTeam(characterIndex, true);
+            relationshipBank.SetOnTeam(characterIndex, true);
         }
     }
 
