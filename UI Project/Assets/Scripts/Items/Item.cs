@@ -5,10 +5,14 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [Header("Item Data")]
+    [SerializeField] int itemID;
     [SerializeField] string itemName;
     [SerializeField] string itemDescription;
     [SerializeField] int buyPrice;
     [SerializeField] int sellPrice;
+
+    [Header("Inventory")]
+    [SerializeField] Inventory inventory;
 
     [Header("For Display")]
     [SerializeField] GameObject myselfPrefab;
@@ -17,6 +21,7 @@ public class Item : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            inventory.AddItemQuantity(itemID);
             Destroy(gameObject); //Might be better to disable and enable the object instead of destorying and instantiating.
         }
     }

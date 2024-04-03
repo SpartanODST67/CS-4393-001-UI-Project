@@ -80,10 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f78d6b2fdb4c24f883f85cba4320a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemID: 0
   itemName: Apple
   itemDescription: An apple a day keeps the doctor away!
   buyPrice: 3
   sellPrice: 2
+  inventory: {fileID: 11400000, guid: 69c692dfa0ee0e741bc61696cb275b94, type: 2}
   myselfPrefab: {fileID: 1366651896606597652}
 --- !u!65 &1846431783326606028
 BoxCollider:
