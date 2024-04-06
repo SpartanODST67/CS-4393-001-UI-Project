@@ -5,57 +5,55 @@ using Yarn.Unity;
 
 public class Conversation : MonoBehaviour, Interactable
 {
+    [Header("Player Input Handler")]
+    [SerializeField] InputHandler inputHandler;
+
     [Header("Interactable Info")]
     [SerializeField] string prompt = "Talk";
     [SerializeField] int characterIndex; //Difficult to read
 
     //Serialized to be visable in editor.
     [Header("Relationship Info")]
-    //[SerializeField] 
-    [SerializeField] float relationshipLevel = 0;
+    [SerializeField] int relationshipLevel = 0;
+    [SerializeField] int relationshipPoints = 0;
     [SerializeField] string characterName; //Used to denote which dialogue node to start
     [SerializeField] bool isQuestComplete;
     [SerializeField] bool isOnTeam;
     [SerializeField] bool isLevelUpReady;
+    [SerializeField] List<int> levelUpThresholds = new List<int>();
 
     [Header("Yarn Info")]
     [SerializeField] DialogueRunner dialogueRunner;
-    [SerializeField] string startNode;
-    private RelationshipBank relationshipBank;
-    private StateManager stateManager;
+    [SerializeField] RelationshipBank relationshipBank;
     private InMemoryVariableStorage storage;
     public string interactionPrompt => prompt;
 
     void Start()
     {
-        relationshipBank = FindObjectOfType<RelationshipBank>();
         storage = FindObjectOfType<InMemoryVariableStorage>();
-        stateManager = FindObjectOfType<StateManager>();
     }
 
     public bool Interact(Interactor interactor)
     {
-        interactor.interactionPromptUI.gameObject.SetActive(false);
+        interactor.interactionPromptUI.close();
         withdrawRelationshipValues();
         updateYarnValues();
         triggerDialogue();
-        stateManager.setTalking();
+        inputHandler.gameObject.SetActive(false);
 
         return true;
     }
 
     private void withdrawRelationshipValues()
     {
-        relationshipLevel = relationshipBank.getRelationshipLevel(characterIndex);
-        characterName = relationshipBank.getCharacterName(characterIndex);
-        isQuestComplete = relationshipBank.isQuestComplete(characterIndex);
-        isOnTeam = relationshipBank.isOnTeam(characterIndex);
-        isLevelUpReady = relationshipBank.isLevelUpReady(characterIndex);
+        relationshipPoints = relationshipBank.GetRelationshipPoints(characterIndex);
+        relationshipLevel = relationshipBank.GetRelationshipLevel(characterIndex);
+        isOnTeam = relationshipBank.IsOnTeam(characterIndex);
     }
 
     private void updateYarnValues()
     {
-        storage.SetValue("$levelUp", isLevelUpReady);
+        //storage.SetValue("$levelUp", isLevelUpReady);
         storage.SetValue("$onTeam", isOnTeam);
         storage.SetValue("$relationshipLevel", relationshipLevel);
         storage.SetValue("$questComplete", isQuestComplete);

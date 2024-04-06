@@ -6,6 +6,15 @@ using Yarn.Unity;
 
 public class YarnFunctions : MonoBehaviour
 {
+    private static GameObject inputHandler;
+    private static RelationshipBank relationshipBank;
+
+    private void Start()
+    {
+        relationshipBank = GameObject.Find("Relationship Bank Storage").GetComponent<RelationshipBankStorage>().relationshipBank;
+        inputHandler = GameObject.FindGameObjectWithTag("Input Handler");
+    }
+
     [YarnCommand("loadRelationshipScene")]
     public static void loadRelationshipScene(string sceneName)
     {
@@ -16,37 +25,34 @@ public class YarnFunctions : MonoBehaviour
     [YarnCommand("relationshipLevelUp")]
     public static void relationshipLevelUp(int characterIndex)
     {
-        RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
-        relationshipBank.setRelationshipLevel(characterIndex, relationshipBank.getRelationshipLevel(characterIndex) + 1);
+        relationshipBank.SetRelationshipLevel(characterIndex, relationshipBank.GetRelationshipLevel(characterIndex) + 1);
     }
 
     [YarnCommand("updateOnTeamStatus")]
     public static void updateOnTeamStatus(int characterIndex)
     {
-        RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
-        if(relationshipBank.isOnTeam(characterIndex))
+        if(relationshipBank.IsOnTeam(characterIndex))
         {
-            relationshipBank.setOnTeam(characterIndex, false);
+            relationshipBank.SetOnTeam(characterIndex, false);
         }
         else
         {
-            relationshipBank.setOnTeam(characterIndex, true);
+            relationshipBank.SetOnTeam(characterIndex, true);
         }
     }
 
+    //We're not going to use this function :)
     [YarnCommand("giveNewQuest")]
     public static void giveNewQuest(int characterIndex, int questID)
     {
         //Temp
-        RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
-        relationshipBank.setQuestCompletion(characterIndex, false);
+        //relationshipBank.setQuestCompletion(characterIndex, false);
         Debug.Log("You still need to implement this dumbass.");
     }
 
     [YarnCommand("endConversation")]
     public static void endConversation()
     {
-        StateManager stateManager = FindAnyObjectByType<StateManager>();
-        stateManager.setWandering();
+        inputHandler.gameObject.SetActive(true);
     }
 }

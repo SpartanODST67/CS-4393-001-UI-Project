@@ -18,46 +18,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector3 origin;
 
     private CharacterController characterController;
-    private StateManager stateManager;
 
     // Start is called before the first frame update
     void Start()
     {
         defaultMovementSpeed = movementSpeed;
         characterController = GetComponent<CharacterController>();
-        stateManager = GameObject.Find("Movement State Manager").GetComponent<StateManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (stateManager.getState() == StateManager.MovementState.Wandering)
-        {
-            sprint();
-            movePlayer();
-        }
-    }
-
-    private void sprint()
-    {
-        float sprintInput = Input.GetAxis("Sprint");
-        if (sprintInput >= sprintThreshold && !isSprinting)
-        {
-            movementSpeed *= 2f;
-            isSprinting = true;
-        }
-        else
-        {
-            movementSpeed = defaultMovementSpeed;
-            isSprinting = false;
-        }
     }
 
     // Moves the player to input.
-    private void movePlayer()
+    public void movePlayer(Vector3 input)
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = input.x;
+        float verticalInput = input.y;
         Vector3 direction = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
         //This moves player when an input button is pressed.
@@ -73,5 +46,20 @@ public class PlayerController : MonoBehaviour
 
         //This applies "gravity" to stick player to ground.
         characterController.SimpleMove(Vector3.down * Time.deltaTime);
+    }
+
+    //Increases player's speed if the sprint button is pressed.
+    public void sprint(float input)
+    {
+        if (input >= sprintThreshold && !isSprinting)
+        {
+            movementSpeed *= 2f;
+            isSprinting = true;
+        }
+        else
+        {
+            movementSpeed = defaultMovementSpeed;
+            isSprinting = false;
+        }
     }
 }

@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
+    [Header("Interactor Settings")]
     [SerializeField] Transform interactionPoint;
     [SerializeField] float interactionRadius;
     [SerializeField] LayerMask interactionLayerMask;
     public InteractionPromptUI interactionPromptUI;
+    [SerializeField] InputHandler inputHandler;
     private bool hasInteractionPrompt = false;
 
+    [Header("Debug Info")]
     private Collider[] overlappingInteractions = new Collider[3];
     [SerializeField] int interactionsFound = 0;
 
     private Interactable interactable;
-    private StateManager stateManager;
-
-    private void Start()
-    {
-        stateManager = FindObjectOfType<StateManager>();
-    }
 
     private void Update()
     {
@@ -27,7 +24,7 @@ public class Interactor : MonoBehaviour
         {
             interactionPromptUI = FindAnyObjectByType<InteractionPromptUI>();
         }
-        if (stateManager.getState() == StateManager.MovementState.Wandering)
+        if (inputHandler.gameObject.activeInHierarchy)
         {
             FindInteractables();
         }
@@ -53,7 +50,7 @@ public class Interactor : MonoBehaviour
 
         if(interactable != null)
         {
-            if(!interactionPromptUI.isActive() && stateManager.getState() == StateManager.MovementState.Wandering)
+            if(!interactionPromptUI.isActive() && inputHandler.gameObject.activeInHierarchy)
             {
                 interactionPromptUI.open(interactable.interactionPrompt);
             }
