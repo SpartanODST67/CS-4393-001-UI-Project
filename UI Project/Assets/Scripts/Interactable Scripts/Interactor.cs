@@ -50,14 +50,14 @@ public class Interactor : MonoBehaviour
 
         if(interactable != null)
         {
-            if(!interactionPromptUI.isActive() && inputHandler.gameObject.activeInHierarchy)
+            if(!interactionPromptUI.IsActive() && inputHandler.gameObject.activeInHierarchy)
             {
-                interactionPromptUI.open(interactable.interactionPrompt);
+                interactionPromptUI.Open(interactable.interactionPrompt);
             }
 
             if(Input.GetAxis("Interact") >= 0.1f)
             {
-                interactionPromptUI.close();
+                interactionPromptUI.Close();
                 interactable.Interact(this);
             }
         }
@@ -69,9 +69,9 @@ public class Interactor : MonoBehaviour
         {
             interactable = null;
         }
-        if (interactionPromptUI.isActive())
+        if (interactionPromptUI.IsActive())
         {
-            interactionPromptUI.close();
+            interactionPromptUI.Close();
         }
     }
 

@@ -15,13 +15,13 @@ public class Door : MonoBehaviour, Interactable
     public bool Interact(Interactor interactor)
     {
         positionSaverScript = Instantiate(positionSaverPrefab).GetComponent<PositionSaver>();
-        positionSaverScript.setDoorNum(doorNum);
-        positionSaverScript.setOriginScene(SceneManager.GetActiveScene().name);
+        positionSaverScript.SetDoorNum(doorNum);
+        positionSaverScript.SetOriginScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(destinationScene);
         return true;
     }
 
-    public int getDoorNum() 
+    public int GetDoorNum() 
     { 
         return doorNum; 
     }

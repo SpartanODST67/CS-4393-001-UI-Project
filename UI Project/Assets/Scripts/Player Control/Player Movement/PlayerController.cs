@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Moves the player to input.
-    public void movePlayer(Vector3 input)
+    public void MovePlayer(Vector3 input)
     {
         float horizontalInput = input.x;
         float verticalInput = input.y;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Increases player's speed if the sprint button is pressed.
-    public void sprint(float input)
+    public void Sprint(float input)
     {
         if (input >= sprintThreshold && !isSprinting)
         {

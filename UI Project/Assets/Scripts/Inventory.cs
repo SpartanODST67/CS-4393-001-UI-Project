@@ -37,7 +37,7 @@ public class Inventory : ScriptableObject
     }
 
     //Takes a csv line and converts it to the inventory quantities.
-    public void fromCSV(string line)
+    public void FromCSV(string line)
     {
         string[] entries = line.Split(",");
         for(int i = 0; i < entries.Length - 1; i++)

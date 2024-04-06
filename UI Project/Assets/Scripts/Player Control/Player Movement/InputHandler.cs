@@ -13,8 +13,8 @@ public class InputHandler : MonoBehaviour
     void Update()
     {
         inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetAxis("Sprint"));
-        player.sprint(inputVector.z);
-        player.movePlayer(inputVector);
+        player.Sprint(inputVector.z);
+        player.MovePlayer(inputVector);
     }
 
     private void OnDisable()

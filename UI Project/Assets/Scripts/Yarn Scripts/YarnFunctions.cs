@@ -15,21 +15,22 @@ public class YarnFunctions : MonoBehaviour
         inputHandler = GameObject.FindGameObjectWithTag("Input Handler");
     }
 
-    [YarnCommand("loadRelationshipScene")]
-    public static void loadRelationshipScene(string sceneName)
+    [YarnCommand("LoadRelationshipScene")]
+    public static void LoadRelationshipScene(string sceneName)
     {
         Debug.Log(string.Format("{0} is loading.", sceneName));
         SceneManager.LoadScene(sceneName);
     }
 
-    [YarnCommand("relationshipLevelUp")]
-    public static void relationshipLevelUp(int characterIndex)
+    [YarnCommand("RelationshipLevelUp")]
+    public static void RelationshipLevelUp(int characterIndex)
     {
         relationshipBank.SetRelationshipLevel(characterIndex, relationshipBank.GetRelationshipLevel(characterIndex) + 1);
     }
 
-    [YarnCommand("updateOnTeamStatus")]
-    public static void updateOnTeamStatus(int characterIndex)
+    //Don't worry about this one too :)
+    [YarnCommand("UpdateOnTeamStatus")]
+    public static void UpdateOnTeamStatus(int characterIndex)
     {
         if(relationshipBank.IsOnTeam(characterIndex))
         {
@@ -42,16 +43,16 @@ public class YarnFunctions : MonoBehaviour
     }
 
     //We're not going to use this function :)
-    [YarnCommand("giveNewQuest")]
-    public static void giveNewQuest(int characterIndex, int questID)
+    [YarnCommand("GiveNewQuest")]
+    public static void GiveNewQuest(int characterIndex, int questID)
     {
         //Temp
         //relationshipBank.setQuestCompletion(characterIndex, false);
         Debug.Log("You still need to implement this dumbass.");
     }
 
-    [YarnCommand("endConversation")]
-    public static void endConversation()
+    [YarnCommand("EndConversation")]
+    public static void EndConversation()
     {
         inputHandler.gameObject.SetActive(true);
     }

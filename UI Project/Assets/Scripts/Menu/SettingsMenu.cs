@@ -23,24 +23,27 @@ public class SettingsMenu : MonoBehaviour
 
     }
 
-    public void setVolume(float volume){
+    public void SetVolume(float volume){
 
         AudioMixer.SetFloat("volume", volume);
     
         
     }
 
-    public void setMute(bool isMute){
+    public void SetMute(bool isMute)
+    {
 
-    if(isMute){
-        AudioMixer.SetFloat("volume", -80);
-        
-    }
-    else{
-        AudioMixer.SetFloat("volume", 0);
-        
-    }
-        
+        if (isMute)
+        {
+            AudioMixer.SetFloat("volume", -80);
+
+        }
+        else
+        {
+            AudioMixer.SetFloat("volume", 0);
+
+        }
+
     }
 
     private void Start()

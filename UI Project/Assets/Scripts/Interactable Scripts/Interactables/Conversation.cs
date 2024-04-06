@@ -35,23 +35,23 @@ public class Conversation : MonoBehaviour, Interactable
 
     public bool Interact(Interactor interactor)
     {
-        interactor.interactionPromptUI.close();
-        withdrawRelationshipValues();
-        updateYarnValues();
-        triggerDialogue();
+        interactor.interactionPromptUI.Close();
+        WithdrawRelationshipValues();
+        UpdateYarnValues();
+        TriggerDialogue();
         inputHandler.gameObject.SetActive(false);
 
         return true;
     }
 
-    private void withdrawRelationshipValues()
+    private void WithdrawRelationshipValues()
     {
         relationshipPoints = relationshipBank.GetRelationshipPoints(characterIndex);
         relationshipLevel = relationshipBank.GetRelationshipLevel(characterIndex);
         isOnTeam = relationshipBank.IsOnTeam(characterIndex);
     }
 
-    private void updateYarnValues()
+    private void UpdateYarnValues()
     {
         //storage.SetValue("$levelUp", isLevelUpReady);
         storage.SetValue("$onTeam", isOnTeam);
@@ -59,7 +59,7 @@ public class Conversation : MonoBehaviour, Interactable
         storage.SetValue("$questComplete", isQuestComplete);
     }
 
-    private void triggerDialogue()
+    private void TriggerDialogue()
     {
         dialogueRunner.StartDialogue(characterName);
     }

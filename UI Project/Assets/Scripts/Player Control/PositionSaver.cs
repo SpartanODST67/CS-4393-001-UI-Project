@@ -12,17 +12,17 @@ public class PositionSaver : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void setDoorNum(int doorNum) 
+    public void SetDoorNum(int doorNum) 
     { 
         this.doorNum = doorNum;
     }
 
-    public int getDoorNum()
+    public int GetDoorNum()
     {
         return doorNum;
     }
 
-    public void setOriginScene(string originScene)
+    public void SetOriginScene(string originScene)
     {
         this.originScene = originScene;
     }

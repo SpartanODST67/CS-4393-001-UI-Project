@@ -10,20 +10,20 @@ public class InteractionPromptUI : MonoBehaviour
     [SerializeField] GameObject uiPanel;
     private bool isDeactive;
 
-    public void open(string promptText)
+    public void Open(string promptText)
     {
         displayText.text = promptText;
         uiPanel.SetActive(true);
         isDeactive = false;
     }
 
-    public void close()
+    public void Close()
     {
         uiPanel.SetActive(false);
         isDeactive = true;
     }
 
-    public bool isActive()
+    public bool IsActive()
     {
         return !isDeactive;
     }
