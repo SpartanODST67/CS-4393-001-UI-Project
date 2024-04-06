@@ -16,6 +16,7 @@ TagManager:
   - Player Battle Station
   - Enemy Battle Station
   - Sound
+  - Input Handler
   layers:
   - Default
   - TransparentFX

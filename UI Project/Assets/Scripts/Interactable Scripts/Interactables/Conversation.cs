@@ -5,6 +5,9 @@ using Yarn.Unity;
 
 public class Conversation : MonoBehaviour, Interactable
 {
+    [Header("Player Input Handler")]
+    [SerializeField] InputHandler inputHandler;
+
     [Header("Interactable Info")]
     [SerializeField] string prompt = "Talk";
     [SerializeField] int characterIndex; //Difficult to read
@@ -21,25 +24,22 @@ public class Conversation : MonoBehaviour, Interactable
 
     [Header("Yarn Info")]
     [SerializeField] DialogueRunner dialogueRunner;
-    [SerializeField] string startNode;
     [SerializeField] RelationshipBank relationshipBank;
-    private StateManager stateManager;
     private InMemoryVariableStorage storage;
     public string interactionPrompt => prompt;
 
     void Start()
     {
         storage = FindObjectOfType<InMemoryVariableStorage>();
-        stateManager = FindObjectOfType<StateManager>();
     }
 
     public bool Interact(Interactor interactor)
     {
-        interactor.interactionPromptUI.gameObject.SetActive(false);
+        interactor.interactionPromptUI.close();
         withdrawRelationshipValues();
         updateYarnValues();
         triggerDialogue();
-        stateManager.setTalking();
+        inputHandler.gameObject.SetActive(false);
 
         return true;
     }

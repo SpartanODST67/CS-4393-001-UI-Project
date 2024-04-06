@@ -6,6 +6,14 @@ using Yarn.Unity;
 
 public class YarnFunctions : MonoBehaviour
 {
+    private static GameObject inputHandler;
+
+
+    private void Start()
+    {
+        inputHandler = GameObject.FindGameObjectWithTag("Input Handler");
+    }
+
     [YarnCommand("loadRelationshipScene")]
     public static void loadRelationshipScene(string sceneName)
     {
@@ -46,7 +54,6 @@ public class YarnFunctions : MonoBehaviour
     [YarnCommand("endConversation")]
     public static void endConversation()
     {
-        StateManager stateManager = FindAnyObjectByType<StateManager>();
-        stateManager.setWandering();
+        inputHandler.gameObject.SetActive(true);
     }
 }
