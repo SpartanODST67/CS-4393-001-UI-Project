@@ -7,10 +7,11 @@ using Yarn.Unity;
 public class YarnFunctions : MonoBehaviour
 {
     private static GameObject inputHandler;
-
+    private static RelationshipBank relationshipBank;
 
     private void Start()
     {
+        relationshipBank = GameObject.Find("Relationship Bank Storage").GetComponent<RelationshipBankStorage>().relationshipBank;
         inputHandler = GameObject.FindGameObjectWithTag("Input Handler");
     }
 
@@ -24,14 +25,12 @@ public class YarnFunctions : MonoBehaviour
     [YarnCommand("relationshipLevelUp")]
     public static void relationshipLevelUp(int characterIndex)
     {
-        RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
         relationshipBank.SetRelationshipLevel(characterIndex, relationshipBank.GetRelationshipLevel(characterIndex) + 1);
     }
 
     [YarnCommand("updateOnTeamStatus")]
     public static void updateOnTeamStatus(int characterIndex)
     {
-        RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
         if(relationshipBank.IsOnTeam(characterIndex))
         {
             relationshipBank.SetOnTeam(characterIndex, false);
@@ -42,11 +41,11 @@ public class YarnFunctions : MonoBehaviour
         }
     }
 
+    //We're not going to use this function :)
     [YarnCommand("giveNewQuest")]
     public static void giveNewQuest(int characterIndex, int questID)
     {
         //Temp
-        RelationshipBank relationshipBank = FindAnyObjectByType<RelationshipBank>();
         //relationshipBank.setQuestCompletion(characterIndex, false);
         Debug.Log("You still need to implement this dumbass.");
     }
