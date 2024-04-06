@@ -492,14 +492,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 149489232}
   prompt: Talk
-  characterIndex: 0
+  characterIndex: 3
   relationshipLevel: 0
   relationshipPoints: 0
   characterName: Mark
   isQuestComplete: 0
   isOnTeam: 0
   isLevelUpReady: 0
-  levelUpThresholds: 
+  isMaxLevel: 0
+  withdrawRate: 5
+  levelUpThresholds: 010000000200000003000000
+  likedGifts: []
+  dislikedGifts:
+  - {fileID: 6748282665299953372, guid: eab2beb5687038545b842e098b00524d, type: 3}
   dialogueRunner: {fileID: 1273752722}
   relationshipBank: {fileID: 11400000, guid: 746d1f01c32ef9548b1af342c34438ed, type: 2}
 --- !u!4 &974811045
@@ -1251,11 +1256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6101292973128353977, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000018645585
+      value: -0.000000018645583
       objectReference: {fileID: 0}
     - target: {fileID: 6101292973128353977, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000004734619
+      value: 0.0000000047346185
       objectReference: {fileID: 0}
     - target: {fileID: 7922529302023139597, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalPosition.x

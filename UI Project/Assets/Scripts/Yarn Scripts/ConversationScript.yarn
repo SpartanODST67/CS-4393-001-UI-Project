@@ -1,9 +1,22 @@
-﻿title: Mark
+﻿title: Declarations
+position: -204,-585
+---
+<<declare $characterIndex = 1 as number>>
+===
+title: Mark
 position: -203,-319
 ---
 Mark: Hello everybody, my name is Markiplier.
+-> You: You look like you need rest. <<if $levelUp is true>>
+    <<jump Mark1>>
 -> You: What?
 -> You: FNaF.
 -> You: Hello Markiplier, my name is everybody.
-<<endConversation>>
+<<EndConversation>>
+===
+title: Mark1
+---
+Mark: Yes I do.
+<<RelationshipLevelUp 3>>
+<<EndConversation>>
 ===
