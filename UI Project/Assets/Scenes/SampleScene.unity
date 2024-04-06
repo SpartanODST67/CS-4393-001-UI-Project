@@ -243,6 +243,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompt: Walk
   destinationScene: CombatTest
+--- !u!1 &149489231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149489233}
+  - component: {fileID: 149489232}
+  m_Layer: 0
+  m_Name: Input Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &149489232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149489231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7ed254a590abb42bb783cb8511defe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1637522042}
+--- !u!4 &149489233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149489231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.1523, y: 1.2604778, z: 75.46634}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &398499285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -599,7 +644,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20760164, y: 0.6750478, z: -0.20699482, w: 0.67702675}
+  m_LocalRotation: {x: 0.20760159, y: 0.6750479, z: -0.20699483, w: 0.6770267}
   m_LocalPosition: {x: 25.350014, y: 2.5, z: 67.191216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -686,10 +731,12 @@ MonoBehaviour:
   prompt: Talk
   characterIndex: 0
   relationshipLevel: 0
+  relationshipPoints: 0
   characterName: 
   isQuestComplete: 0
   isOnTeam: 0
   isLevelUpReady: 0
+  levelUpThresholds: 
   dialogueRunner: {fileID: 1273752722}
   startNode: Donald
   relationshipBank: {fileID: 11400000, guid: 746d1f01c32ef9548b1af342c34438ed, type: 2}
@@ -1196,6 +1243,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1637522042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3785254180680668110, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
+  m_PrefabInstance: {fileID: 7190503953465347510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02f134e72b494240aba1e3cd0ce7bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1682068147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,11 +1563,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783548409621545218, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.20760162
+      value: 0.20760159
       objectReference: {fileID: 0}
     - target: {fileID: 783548409621545218, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6750478
+      value: 0.6750479
       objectReference: {fileID: 0}
     - target: {fileID: 783548409621545218, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1630,3 +1688,4 @@ SceneRoots:
   - {fileID: 1220207224}
   - {fileID: 1935468831}
   - {fileID: 398499285}
+  - {fileID: 149489233}
