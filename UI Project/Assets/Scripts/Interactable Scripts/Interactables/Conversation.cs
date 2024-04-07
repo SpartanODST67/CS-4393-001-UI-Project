@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -108,7 +109,25 @@ public class Conversation : MonoBehaviour, Interactable
         dialogueRunner.StartDialogue(characterName);
     }
 
-    public int DetermineGiftOpinion(int giftID)
+    public void ReceiveGift(int giftID)
+    {
+        StringBuilder targetNode = new StringBuilder(characterName);
+        switch (DetermineGiftOpinion(giftID)){
+            case -1:
+                targetNode.Append("Disgratitude");
+                break;
+            case 0:
+                targetNode.Append("Satisfied");
+                break;
+            case 1:
+                targetNode.Append("Gratitude");
+                break;
+
+        }
+        dialogueRunner.StartDialogue(targetNode.ToString());
+    }
+
+    private int DetermineGiftOpinion(int giftID)
     {
         if(DoesLike(giftID)) {
             return 1;
