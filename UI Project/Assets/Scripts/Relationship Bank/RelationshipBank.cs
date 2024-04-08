@@ -20,6 +20,16 @@ public class RelationshipBank : ScriptableObject
         relationshipLevels[i] = level;
     }
 
+    public void LevelUp(int i)
+    {
+        relationshipLevels[i]++;
+    }
+
+    public void LevelUp(int i, int amount)
+    {
+        relationshipLevels[i] += amount;
+    }
+
     public int GetRelationshipPoints(int i)
     {
         return relationshipPoints[i];

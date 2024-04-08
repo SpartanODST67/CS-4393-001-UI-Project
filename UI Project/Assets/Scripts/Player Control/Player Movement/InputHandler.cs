@@ -19,11 +19,17 @@ public class InputHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        cameraBrain.enabled = false;
+        if (cameraBrain != null)
+        {
+            cameraBrain.enabled = false;
+        }
     }
 
     private void OnEnable()
     {
-        cameraBrain.enabled = true;
+        if (cameraBrain != null)
+        {
+            cameraBrain.enabled = true;
+        }
     }
 }
