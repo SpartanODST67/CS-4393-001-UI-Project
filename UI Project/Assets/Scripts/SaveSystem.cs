@@ -40,4 +40,19 @@ public class SaveSystem : MonoBehaviour
             newFile.Write(saveData.ToString());
         }
     }
+
+    public void LoadGame()
+    {
+        StringBuilder path = new StringBuilder(folderPath);
+        path.Append(fileName);
+
+        string filePath = path.ToString();
+
+        StreamReader sr = File.OpenText(filePath);
+
+        inventory.FromCSV(sr.ReadLine());
+        relationshipBank.LoadLevels(sr.ReadLine());
+        relationshipBank.LoadPoints(sr.ReadLine());
+        relationshipBank.LoadOnTeam(sr.ReadLine());
+    }
 }
