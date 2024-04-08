@@ -1,9 +1,45 @@
-﻿title: Mark
+﻿title: Declarations
+position: -204,-585
+---
+<<declare $characterIndex = 1 as number>>
+===
+title: DrJelly
 position: -203,-319
 ---
-Mark: Hello everybody, my name is Markiplier.
--> You: What?
--> You: FNaF.
--> You: Hello Markiplier, my name is everybody.
-<<endConversation>>
+Dr.Jelly: Hello, my name is Dr.Jelly, desu.
+-> You: Are you really a doctor? I thought you were just the face of a food brand. 
+    <<if $levelUp is true>>
+        <<jump DrJelly1>>
+    <<else>>
+        Dr.Jelly: 
+    <<endif>>
+-> You: I want to give you something.
+    ->Dr.Jelly: Oh really?
+    <<stop>>
+-> You: Nevermind.
+<<EndConversation>>
+===
+title: DrJelly1
+---
+Mark: Yes I do.
+<<RelationshipLevelUp 3>>
+<<EndConversation>>
+===
+title: DrJellyGratitude
+position: 517,-319
+---
+Dr.Jelly: Thank you so much!
+<<EndConversation>>
+===
+title: DrJellySatisfied
+position: 301,-319
+---
+Dr.Jelly: Thanks.
+<<EndConversation>>
+===
+title: DrJellyDisgratitude
+position: 75,-319
+---
+Dr.Jelly: Thanks?
+<<EndConversation>>
 ===

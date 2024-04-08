@@ -25,7 +25,7 @@ public class YarnFunctions : MonoBehaviour
     [YarnCommand("RelationshipLevelUp")]
     public static void RelationshipLevelUp(int characterIndex)
     {
-        relationshipBank.SetRelationshipLevel(characterIndex, relationshipBank.GetRelationshipLevel(characterIndex) + 1);
+        relationshipBank.LevelUp(characterIndex);
     }
 
     //Don't worry about this one too :)

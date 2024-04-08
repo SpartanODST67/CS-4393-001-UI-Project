@@ -25,4 +25,29 @@ public class Item : MonoBehaviour
             Destroy(gameObject); //Might be better to disable and enable the object instead of destorying and instantiating.
         }
     }
+
+    public int GetItemID()
+    {
+        return itemID;
+    }
+
+    public string GetItemName()
+    {
+        return itemName;
+    }
+
+    public string GetDescription()
+    {
+        return itemDescription;
+    }
+
+    public int GetBuyPrice()
+    {
+        return buyPrice;
+    }
+
+    public int GetSellPrice()
+    {
+        return sellPrice;
+    }
 }
