@@ -8,6 +8,7 @@ public class Conversation : MonoBehaviour, Interactable
 {
     [Header("Player Input Handler")]
     [SerializeField] InputHandler inputHandler;
+    [SerializeField] ItemTransfer itemTransfer;
 
     [Header("Interactable Info")]
     [SerializeField] string prompt = "Talk";
@@ -44,6 +45,7 @@ public class Conversation : MonoBehaviour, Interactable
     public bool Interact(Interactor interactor)
     {
         interactor.interactionPromptUI.Close();
+        itemTransfer.SetTargetCharacter(this);
         WithdrawRelationshipValues();
         isMaxLevel = IsMaxed();
         isLevelUpReady = DetermineLevelUpReady();
@@ -112,17 +114,25 @@ public class Conversation : MonoBehaviour, Interactable
     public void ReceiveGift(int giftID)
     {
         StringBuilder targetNode = new StringBuilder(characterName);
-        switch (DetermineGiftOpinion(giftID)){
-            case -1:
-                targetNode.Append("Disgratitude");
-                break;
-            case 0:
-                targetNode.Append("Satisfied");
-                break;
-            case 1:
-                targetNode.Append("Gratitude");
-                break;
+        if (giftID == -1)
+        {
+            targetNode.Append("Nevermind");
+        }
+        else
+        {
+            switch (DetermineGiftOpinion(giftID))
+            {
+                case -1:
+                    targetNode.Append("Disgratitude");
+                    break;
+                case 0:
+                    targetNode.Append("Satisfied");
+                    break;
+                case 1:
+                    targetNode.Append("Gratitude");
+                    break;
 
+            }
         }
         dialogueRunner.StartDialogue(targetNode.ToString());
     }
