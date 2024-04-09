@@ -27,6 +27,11 @@ public class SaveSystem : MonoBehaviour
         saveData.Append("\n");
         saveData.Append(relationshipBankSave);
 
+        if(!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+        }
+
         if(!File.Exists(filePath))
         {
             using (StreamWriter sw = File.CreateText(filePath))
@@ -41,12 +46,22 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public void LoadGame()
+    public bool LoadGame()
     {
+        if(!Directory.Exists(folderPath))
+        {
+            return false;
+        }
+
         StringBuilder path = new StringBuilder(folderPath);
         path.Append(fileName);
 
         string filePath = path.ToString();
+
+        if(!File.Exists(filePath))
+        {
+            return false;
+        }
 
         StreamReader sr = File.OpenText(filePath);
 
@@ -54,5 +69,6 @@ public class SaveSystem : MonoBehaviour
         relationshipBank.LoadLevels(sr.ReadLine());
         relationshipBank.LoadPoints(sr.ReadLine());
         relationshipBank.LoadOnTeam(sr.ReadLine());
+        return true;
     }
 }
