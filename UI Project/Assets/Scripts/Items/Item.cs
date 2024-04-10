@@ -16,11 +16,14 @@ public class Item : MonoBehaviour
 
     [Header("For Display")]
     [SerializeField] GameObject myselfPrefab;
+    [SerializeField] GameObject pickUpNotification;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            pickUpNotification.GetComponent<ItemPickupNotification>().SetItem(itemName);
+            Instantiate(pickUpNotification, GameObject.FindGameObjectWithTag("Notification Manager").transform);
             inventory.AddItemQuantity(itemID);
             Destroy(gameObject); //Might be better to disable and enable the object instead of destorying and instantiating.
         }

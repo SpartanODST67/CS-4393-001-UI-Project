@@ -46,11 +46,31 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public bool LoadGame()
+    public string[] GetSavedGames()
     {
         if(!Directory.Exists(folderPath))
         {
-            return false;
+            return null;
+        }
+        return Directory.GetFiles(folderPath);
+    }
+
+    public int CountSavedGames()
+    {
+        if(!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+            return 0;
+        }
+        return Directory.GetFiles(folderPath).Length;
+    }
+
+    public void LoadGame()
+    {
+        if(!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+            return;
         }
 
         StringBuilder path = new StringBuilder(folderPath);
@@ -60,7 +80,7 @@ public class SaveSystem : MonoBehaviour
 
         if(!File.Exists(filePath))
         {
-            return false;
+            return;
         }
 
         StreamReader sr = File.OpenText(filePath);
@@ -69,6 +89,5 @@ public class SaveSystem : MonoBehaviour
         relationshipBank.LoadLevels(sr.ReadLine());
         relationshipBank.LoadPoints(sr.ReadLine());
         relationshipBank.LoadOnTeam(sr.ReadLine());
-        return true;
     }
 }

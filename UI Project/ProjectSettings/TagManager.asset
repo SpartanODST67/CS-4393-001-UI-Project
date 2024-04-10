@@ -17,6 +17,7 @@ TagManager:
   - Enemy Battle Station
   - Sound
   - Input Handler
+  - Notification Manager
   layers:
   - Default
   - TransparentFX
