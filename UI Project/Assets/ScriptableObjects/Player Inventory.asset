@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0d729d618ca2054099add3c4a5ab1d5, type: 3}
-  m_Name: New Inventory
+  m_Name: Player Inventory
   m_EditorClassIdentifier: 
   itemQuantities: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   wallet: 0

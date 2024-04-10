@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77726cf823b9aff40bff3d155f7afd04, type: 3}
-  m_Name: New Relationship Bank
+  m_Name: Relationship Bank
   m_EditorClassIdentifier: 
   relationshipLevels: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   relationshipPoints: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
