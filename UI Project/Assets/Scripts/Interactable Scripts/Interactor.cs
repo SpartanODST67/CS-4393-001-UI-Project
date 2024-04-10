@@ -55,7 +55,7 @@ public class Interactor : MonoBehaviour
                 interactionPromptUI.Open(interactable.interactionPrompt);
             }
 
-            if(Input.GetAxis("Interact") >= 0.1f)
+            if(inputHandler.GetInteract() >= 0.1f)
             {
                 interactionPromptUI.Close();
                 interactable.Interact(this);

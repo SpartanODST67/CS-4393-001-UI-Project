@@ -17,6 +17,11 @@ public class InputHandler : MonoBehaviour
         player.MovePlayer(inputVector);
     }
 
+    public float GetInteract()
+    {
+        return Input.GetAxis("Interact");
+    }
+
     private void OnDisable()
     {
         if (cameraBrain != null)
