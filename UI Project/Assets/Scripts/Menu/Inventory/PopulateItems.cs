@@ -36,7 +36,6 @@ public class PopulateItems : MonoBehaviour
             buttonItem.SetIndex(i);
             text.text = inventory.items[i].GetItemName() + ": " + inventory.itemQuantities[i].ToString();
             buttonScript.onClick.AddListener(() => {
-                Debug.Log(buttonItem.GetIndex());
                 detailsPage.SetItemName(inventory.items[buttonItem.GetIndex()].GetItemName());
                 detailsPage.SetItemQuantity(inventory.itemQuantities[buttonItem.GetIndex()]);
                 detailsPage.SetItemDescription(inventory.items[buttonItem.GetIndex()].GetDescription());

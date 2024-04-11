@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DetailsManager : MonoBehaviour
 {
-
+    [Header("Menu Elements")]
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemQuantity;
     [SerializeField] TextMeshProUGUI itemDescription;
@@ -54,11 +54,11 @@ public class DetailsManager : MonoBehaviour
 
     public void SetItemBuyPrice(int buyPrice)
     {
-        itemBuyPrice.text = "Buy For: " + buyPrice.ToString();
+        itemBuyPrice.text = "Buy For: $" + buyPrice.ToString();
     }
 
     public void SetItemSellPrice(int sellPrice)
     {
-        itemSellPrice.text = "Sell For: " + sellPrice.ToString();
+        itemSellPrice.text = "Sell For: $" + sellPrice.ToString();
     }
 }
