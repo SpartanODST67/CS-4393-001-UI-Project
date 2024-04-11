@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/Inventory")]
 public class Inventory : ScriptableObject
 {
+    public List<Item> items = new List<Item>();
     public List<int> itemQuantities = new List<int>();
     public int wallet;
     
