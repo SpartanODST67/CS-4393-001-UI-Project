@@ -12,6 +12,7 @@ public class Conversation : MonoBehaviour, Interactable
 
     [Header("Interactable Info")]
     [SerializeField] string prompt = "Talk";
+    [SerializeField] SpeechBubble speechBubble;
 
     //Serialized to be visable in editor.
     [Header("Relationship Info")]
@@ -50,6 +51,7 @@ public class Conversation : MonoBehaviour, Interactable
         isMaxLevel = IsMaxed();
         isLevelUpReady = DetermineLevelUpReady();
         UpdateYarnValues();
+        UpdateSpeechBubble();
         TriggerDialogue();
         inputHandler.gameObject.SetActive(false);
 
@@ -70,6 +72,7 @@ public class Conversation : MonoBehaviour, Interactable
             WithdrawRelationshipValues();
             isMaxLevel = IsMaxed();
             isLevelUpReady = DetermineLevelUpReady();
+            UpdateSpeechBubble();
             yield return new WaitForSeconds(withdrawRate);
         }
     }
@@ -104,6 +107,22 @@ public class Conversation : MonoBehaviour, Interactable
         storage.SetValue("$onTeam", isOnTeam);
         storage.SetValue("$relationshipLevel", relationshipLevel);
         storage.SetValue("$questComplete", isQuestComplete);
+    }
+
+    private void UpdateSpeechBubble()
+    {
+        if(isMaxLevel)
+        {
+            speechBubble.SetDone();
+        }
+        else if(isLevelUpReady)
+        {
+            speechBubble.SetAlert();
+        }
+        else
+        {
+            speechBubble.SetNeutral();
+        }
     }
 
     private void TriggerDialogue()
