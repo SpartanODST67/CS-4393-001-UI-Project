@@ -79,7 +79,7 @@ public class Conversation : MonoBehaviour, Interactable
 
     private bool IsMaxed()
     {
-        if(relationshipLevel == levelUpThresholds.Count)
+        if(relationshipLevel >= levelUpThresholds.Count)
         {
             return true;
         }
