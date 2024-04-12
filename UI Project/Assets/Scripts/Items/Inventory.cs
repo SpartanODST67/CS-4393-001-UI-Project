@@ -25,6 +25,10 @@ public class Inventory : ScriptableObject
 
     public void RemoveItemQuantity(int index)
     {
+        if(index < 0)
+        {
+            return;
+        }
         itemQuantities[index]--;
     }
 

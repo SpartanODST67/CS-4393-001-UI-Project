@@ -18,6 +18,7 @@ TagManager:
   - Sound
   - Input Handler
   - Notification Manager
+  - Game Menus
   layers:
   - Default
   - TransparentFX

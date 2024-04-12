@@ -8,11 +8,13 @@ public class YarnFunctions : MonoBehaviour
 {
     private static GameObject inputHandler;
     private static RelationshipBank relationshipBank;
+    private static MenuManager menuManager;
 
     private void Start()
     {
         relationshipBank = GameObject.Find("Relationship Bank Storage").GetComponent<RelationshipBankStorage>().relationshipBank;
         inputHandler = GameObject.FindGameObjectWithTag("Input Handler");
+        menuManager = GameObject.FindGameObjectWithTag("Game Menus").GetComponent<MenuManager>();
     }
 
     [YarnCommand("LoadRelationshipScene")]
@@ -55,5 +57,11 @@ public class YarnFunctions : MonoBehaviour
     public static void EndConversation()
     {
         inputHandler.gameObject.SetActive(true);
+    }
+
+    [YarnCommand("OpenInventory")]
+    public static void OpenInventory(int mode)
+    {
+        menuManager.ActivateInventory(mode);
     }
 }

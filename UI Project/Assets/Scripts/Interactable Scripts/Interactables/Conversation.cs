@@ -36,15 +36,14 @@ public class Conversation : MonoBehaviour, Interactable
 
     [Header("Yarn Info")]
     [SerializeField] DialogueRunner dialogueRunner;
+    [SerializeField] InMemoryVariableStorage storage;
     [SerializeField] RelationshipBank relationshipBank;
-    private InMemoryVariableStorage storage;
     public string interactionPrompt => prompt;
 
     void Start()
     {
         startNode = characterName.Replace(" ", "");
         startNode = startNode.Replace(".", "");
-        storage = FindObjectOfType<InMemoryVariableStorage>();
         StartCoroutine("PassiveWithdraw");
     }
 

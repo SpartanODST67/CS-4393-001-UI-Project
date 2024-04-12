@@ -7,8 +7,8 @@ public class ItemTransfer : MonoBehaviour
 {
     [SerializeField] Inventory inventory;
     private Conversation targetCharacter;
-    public int itemID = 0;
-    public int itemQuantity = 1;
+    private int itemID = 0;
+    private int itemQuantity = 1;
     public int moneyAmount = 1;
 
     public void SetTargetCharacter(Conversation targetCharacter)
