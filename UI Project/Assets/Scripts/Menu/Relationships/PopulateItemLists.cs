@@ -14,15 +14,15 @@ public class PopulateItemLists : MonoBehaviour
 
     IEnumerator InstantiateItems(List<Item> list)
     {
-        foreach (GameObject child in gameObject.transform)
+        for (int i = transform.childCount - 1; i >= 0; i--)
         {
-            Destroy(child);
+            Destroy(transform.GetChild(i).gameObject);
             yield return null;
         }
 
         foreach (Item item in list)
         {
-            TextMeshProUGUI displayText = Instantiate(textPrefab, gameObject.transform).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI displayText = Instantiate(textPrefab, transform).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             displayText.text = item.GetItemName();
             yield return null;
         }

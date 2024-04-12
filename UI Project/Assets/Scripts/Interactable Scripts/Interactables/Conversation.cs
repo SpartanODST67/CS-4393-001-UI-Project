@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,7 @@ public class Conversation : MonoBehaviour, Interactable
     [SerializeField] int relationshipLevel = 0;
     [SerializeField] int relationshipPoints = 0;
     [SerializeField] string characterName; //Used to denote which dialogue node to start
+    private string startNode;
     [SerializeField] string characterDescription;
     [SerializeField] bool isQuestComplete;
     [SerializeField] bool isOnTeam;
@@ -40,6 +42,8 @@ public class Conversation : MonoBehaviour, Interactable
 
     void Start()
     {
+        startNode = characterName.Replace(" ", "");
+        startNode = startNode.Replace(".", "");
         storage = FindObjectOfType<InMemoryVariableStorage>();
         StartCoroutine("PassiveWithdraw");
     }
@@ -128,12 +132,12 @@ public class Conversation : MonoBehaviour, Interactable
 
     private void TriggerDialogue()
     {
-        dialogueRunner.StartDialogue(characterName);
+        dialogueRunner.StartDialogue(startNode);
     }
 
     public void ReceiveGift(int giftID)
     {
-        StringBuilder targetNode = new StringBuilder(characterName);
+        StringBuilder targetNode = new StringBuilder(startNode);
         if (giftID == -1)
         {
             targetNode.Append("Nevermind");
@@ -201,6 +205,11 @@ public class Conversation : MonoBehaviour, Interactable
     public string GetCharacterDescription()
     {
         return characterDescription;
+    }
+
+    public int GetMaxLevels()
+    {
+        return levelUpThresholds.Count;
     }
 
     public int GetCurrentThreshold()

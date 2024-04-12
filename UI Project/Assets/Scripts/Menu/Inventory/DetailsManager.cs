@@ -87,8 +87,13 @@ public class DetailsManager : MonoBehaviour
         characterLevel.text = level;
     }
 
-    public void SetCharacterLevel(int level)
+    public void SetCharacterLevel(int level, int maxLevel)
     {
+        if(level >= maxLevel)
+        {
+            characterLevel.text = "MAX";
+            return;
+        }
         characterLevel.text = level.ToString();
     }
 

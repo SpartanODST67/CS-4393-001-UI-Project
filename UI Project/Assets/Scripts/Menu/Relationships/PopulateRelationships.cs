@@ -10,7 +10,7 @@ public class PopulateRelationships : MonoBehaviour
     [SerializeField] GameObject buttonPrefab;
     [SerializeField] DetailsManager detailsPage;
 
-    private void Start()
+    private void OnEnable()
     {
         LoadRelationships();
     }
@@ -22,6 +22,12 @@ public class PopulateRelationships : MonoBehaviour
 
     IEnumerator LoadRelationshipsCoroutine()
     {
+        for(int i = transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+            yield return null;
+        }
+
         for (int i = 0; i < relationshipBank.characters.Count; i++)
         {
             GameObject button = Instantiate(buttonPrefab, gameObject.transform);
@@ -29,18 +35,28 @@ public class PopulateRelationships : MonoBehaviour
             Button buttonScript = button.GetComponent<Button>();
             ButtonItem buttonItem = button.GetComponent<ButtonItem>();
             buttonItem.SetIndex(i);
-            text.text = relationshipBank.characters[i].GetCharacterName() + ": " + relationshipBank.relationshipLevels[i].ToString();
-            buttonScript.onClick.AddListener(() => {
+            text.text = WriteText(text, i);
+            buttonScript.onClick.AddListener(() =>
+            {
                 detailsPage.SetCharacterName(relationshipBank.characters[buttonItem.GetIndex()].GetCharacterName());
                 detailsPage.SetCharacterDescription(relationshipBank.characters[buttonItem.GetIndex()].GetCharacterDescription());
-                detailsPage.SetCharacterLevel(relationshipBank.relationshipLevels[buttonItem.GetIndex()]);
+                detailsPage.SetCharacterLevel(relationshipBank.relationshipLevels[buttonItem.GetIndex()], relationshipBank.characters[buttonItem.GetIndex()].GetMaxLevels());
                 detailsPage.SetProgressBar(new Vector2(relationshipBank.characters[buttonItem.GetIndex()].GetCurrentThreshold(), relationshipBank.relationshipPoints[buttonItem.GetIndex()]));
+                detailsPage.Open();
                 detailsPage.SetLikeItems(relationshipBank.characters[buttonItem.GetIndex()].GetLikedItems());
                 detailsPage.SetDislikeItems(relationshipBank.characters[buttonItem.GetIndex()].GetDislikedItems());
-                detailsPage.Open();
             });
 
             yield return null;
         }
+    }
+
+    private string WriteText(TextMeshProUGUI text, int i)
+    {
+        if (relationshipBank.relationshipLevels[i] >= relationshipBank.characters[i].GetMaxLevels())
+        {
+            return relationshipBank.characters[i].GetCharacterName() + ": MAX";
+        }
+        return relationshipBank.characters[i].GetCharacterName() + ": " + relationshipBank.relationshipLevels[i].ToString();
     }
 }

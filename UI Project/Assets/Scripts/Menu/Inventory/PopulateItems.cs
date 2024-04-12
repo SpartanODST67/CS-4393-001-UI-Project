@@ -9,6 +9,7 @@ public class PopulateItems : MonoBehaviour
     [SerializeField] Inventory inventory;
     [SerializeField] GameObject buttonPrefab;
     [SerializeField] DetailsManager detailsPage;
+    [SerializeField] GameObject emptyNotification;
 
     private void OnEnable()
     {
@@ -22,7 +23,13 @@ public class PopulateItems : MonoBehaviour
 
     IEnumerator LoadItemsCoroutine()
     {
-        for(int i = 0; i < inventory.items.Count; i++)
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+            yield return null;
+        }
+
+        for (int i = 0; i < inventory.items.Count; i++)
         {
             if (inventory.itemQuantities[i] == 0)
             {
@@ -45,6 +52,15 @@ public class PopulateItems : MonoBehaviour
             });
 
             yield return null;
+        }
+
+        if(transform.childCount == 0)
+        {
+            emptyNotification.SetActive(true);
+        }
+        else
+        {
+            emptyNotification.SetActive(false);
         }
     }
 }
