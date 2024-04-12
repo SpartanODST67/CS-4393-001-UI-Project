@@ -43,7 +43,7 @@ public class PopulateItems : MonoBehaviour
             GameObject button = Instantiate(buttonPrefab, gameObject.transform);
             TextMeshProUGUI text = button.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             Button buttonScript = button.GetComponent<Button>();
-            ButtonItem buttonItem = button.GetComponent<ButtonItem>();
+            ButtonIndex buttonItem = button.GetComponent<ButtonIndex>();
             buttonItem.SetIndex(i);
             text.text = inventory.items[i].GetItemName() + ": " + inventory.itemQuantities[i].ToString();
             buttonScript.onClick.AddListener(() => {

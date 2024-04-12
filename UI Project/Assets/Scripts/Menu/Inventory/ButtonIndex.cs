@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonItem : MonoBehaviour
+public class ButtonIndex : MonoBehaviour
 {
     private int index = 0;
 

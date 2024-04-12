@@ -216,6 +216,24 @@ public class Conversation : MonoBehaviour, Interactable
         return levelUpThresholds[relationshipLevel];
     }
 
+    public int GetPreviousThreshold()
+    {
+        if (relationshipLevel <= 0)
+        {
+            return 0;
+        }
+        return levelUpThresholds[relationshipLevel - 1];
+    }
+
+    public int GetSpecificThreshold(int level)
+    {
+        if(level < 0)
+        {
+            return 0;
+        }
+        return levelUpThresholds[level];
+    }
+
     public List<Item> GetLikedItems()
     {
         return likedGifts;

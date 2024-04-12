@@ -33,25 +33,25 @@ public class PopulateRelationships : MonoBehaviour
             GameObject button = Instantiate(buttonPrefab, gameObject.transform);
             TextMeshProUGUI text = button.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             Button buttonScript = button.GetComponent<Button>();
-            ButtonItem buttonItem = button.GetComponent<ButtonItem>();
-            buttonItem.SetIndex(i);
-            text.text = WriteText(text, i);
+            ButtonIndex buttonIndex = button.GetComponent<ButtonIndex>();
+            buttonIndex.SetIndex(i);
+            text.text = WriteText(i);
             buttonScript.onClick.AddListener(() =>
             {
-                detailsPage.SetCharacterName(relationshipBank.characters[buttonItem.GetIndex()].GetCharacterName());
-                detailsPage.SetCharacterDescription(relationshipBank.characters[buttonItem.GetIndex()].GetCharacterDescription());
-                detailsPage.SetCharacterLevel(relationshipBank.relationshipLevels[buttonItem.GetIndex()], relationshipBank.characters[buttonItem.GetIndex()].GetMaxLevels());
-                detailsPage.SetProgressBar(new Vector2(relationshipBank.characters[buttonItem.GetIndex()].GetCurrentThreshold(), relationshipBank.relationshipPoints[buttonItem.GetIndex()]));
+                detailsPage.SetCharacterName(relationshipBank.characters[buttonIndex.GetIndex()].GetCharacterName());
+                detailsPage.SetCharacterDescription(relationshipBank.characters[buttonIndex.GetIndex()].GetCharacterDescription());
+                detailsPage.SetCharacterLevel(relationshipBank.relationshipLevels[buttonIndex.GetIndex()], relationshipBank.characters[buttonIndex.GetIndex()].GetMaxLevels());
+                detailsPage.SetProgressBar(new Vector3(relationshipBank.characters[buttonIndex.GetIndex()].GetSpecificThreshold(relationshipBank.relationshipLevels[buttonIndex.GetIndex()]), relationshipBank.characters[buttonIndex.GetIndex()].GetSpecificThreshold(relationshipBank.relationshipLevels[buttonIndex.GetIndex()] - 1), relationshipBank.relationshipPoints[buttonIndex.GetIndex()]));
                 detailsPage.Open();
-                detailsPage.SetLikeItems(relationshipBank.characters[buttonItem.GetIndex()].GetLikedItems());
-                detailsPage.SetDislikeItems(relationshipBank.characters[buttonItem.GetIndex()].GetDislikedItems());
+                detailsPage.SetLikeItems(relationshipBank.characters[buttonIndex.GetIndex()].GetLikedItems());
+                detailsPage.SetDislikeItems(relationshipBank.characters[buttonIndex.GetIndex()].GetDislikedItems());
             });
 
             yield return null;
         }
     }
 
-    private string WriteText(TextMeshProUGUI text, int i)
+    private string WriteText(int i)
     {
         if (relationshipBank.relationshipLevels[i] >= relationshipBank.characters[i].GetMaxLevels())
         {

@@ -98,9 +98,9 @@ public class DetailsManager : MonoBehaviour
         characterLevel.text = level.ToString();
     }
 
-    public void SetProgressBar(Vector2 progress)
+    public void SetProgressBar(Vector3 progress)
     {
-        progressBar.UpdateProgress((int) progress.x, (int) progress.y);
+        progressBar.UpdateProgress((int) progress.x, (int) progress.y, (int) progress.z);
     }
 
     public void SetLikeItems(List<Item> likedItems)

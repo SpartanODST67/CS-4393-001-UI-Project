@@ -5,17 +5,23 @@ using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] Image visualbar;
+    [SerializeField] Image visualBar;
     [SerializeField] int maxValue = 1;
+    [SerializeField] int minValue = 0;
     [SerializeField] int currentValue = 1;
     private float progress;
 
-    public void UpdateProgress(int maxValue, int currentValue)
+    public void UpdateProgress(int maxValue, int minValue, int currentValue)
     {
         this.maxValue = maxValue;
+        this.minValue = minValue;
         if(currentValue > maxValue)
         {
             currentValue = maxValue;
+        }
+        if(currentValue < minValue)
+        {
+            currentValue = minValue;
         }
         this.currentValue = currentValue;
         SetProgress();
@@ -39,13 +45,13 @@ public class ProgressBar : MonoBehaviour
 
     private void SetProgress()
     {
-        progress = (float) currentValue / maxValue;
+        progress = (float) (currentValue - minValue) / (maxValue - minValue);
         DisplayProgress();
     }
 
     private void DisplayProgress()
     {
-        visualbar.transform.localScale = new Vector3(progress, visualbar.transform.localScale.y, visualbar.transform.localScale.z);
+        visualBar.transform.localScale = new Vector3(progress, visualBar.transform.localScale.y, visualBar.transform.localScale.z);
     }
 
 }
