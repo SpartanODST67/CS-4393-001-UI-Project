@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 public class PopulateItems : MonoBehaviour
 {
+    [Header("Background Systems")]
     [SerializeField] Inventory inventory;
+    [SerializeField] ItemTransfer itemTransfer;
+    [Header("Displayed Systems")]
     [SerializeField] GameObject buttonPrefab;
     [SerializeField] DetailsManager detailsPage;
     [SerializeField] GameObject emptyNotification;
@@ -32,7 +35,7 @@ public class PopulateItems : MonoBehaviour
 
         for (int i = 0; i < inventory.items.Count; i++)
         {
-            if (inventory.itemQuantities[i] == 0)
+            if (inventory.itemQuantities[i] <= 0)
             {
                 continue;
             }
@@ -49,6 +52,7 @@ public class PopulateItems : MonoBehaviour
                 detailsPage.SetItemDescription(inventory.items[buttonItem.GetIndex()].GetDescription());
                 detailsPage.SetItemBuyPrice(inventory.items[buttonItem.GetIndex()].GetBuyPrice());
                 detailsPage.SetItemSellPrice(inventory.items[buttonItem.GetIndex()].GetSellPrice());
+                itemTransfer.SetItemID(buttonItem.GetIndex());
                 detailsPage.Open(); 
             });
 
