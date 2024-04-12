@@ -10,6 +10,7 @@ public class PopulateItems : MonoBehaviour
     [SerializeField] GameObject buttonPrefab;
     [SerializeField] DetailsManager detailsPage;
     [SerializeField] GameObject emptyNotification;
+    [SerializeField] TextMeshProUGUI walletAmount;
 
     private void OnEnable()
     {
@@ -62,5 +63,7 @@ public class PopulateItems : MonoBehaviour
         {
             emptyNotification.SetActive(false);
         }
+
+        walletAmount.text = "Wallet: $" + inventory.wallet.ToString(); 
     }
 }
