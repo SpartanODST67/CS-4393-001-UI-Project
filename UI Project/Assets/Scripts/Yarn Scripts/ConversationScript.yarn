@@ -52,25 +52,40 @@ Dr.Jelly: I'm level {$relationshipLevel}
 title: DrJellyGratitude
 position: 475,-140
 ---
-Dr.Jelly: Thank you so much!
+Dr.Jelly: Arigato ko sai mas!
+You: I don't speak Japanese.
+Dr.Jelly: Thank you!
+I guess this hit home with him.
+<<RewardRelationshipPoints 1 3>>
 <<EndConversation>>
 ===
 title: DrJellySatisfied
 position: 249,-140
 ---
-Dr.Jelly: Thanks.
+Dr.Jelly: Thanks?
+You: You don't like it?
+Dr.Jelly: No! No. I'll take it.
+I guess he doesn't feel much for my gift.
+<<RewardRelationshipPoints 1 1>>
 <<EndConversation>>
 ===
 title: DrJellyDisgratitude
 position: 29,-140
 ---
-Dr.Jelly: Thanks?
+Dr.Jelly: WHAT IS THAT!?
+You: It's-
+Dr.Jelly: NEVER SHOW THAT EVER AGAIN!
+I should heed his warning.
+<<RewardRelationshipPoints 1 -1>>
 <<EndConversation>>
 ===
 title: DrJellyNevermind
 position: 700,-140
 ---
-Dr.Jelly: Changed your mind?
+Dr.Jelly: Did you change your mind?
+You: Yeah, sorry.
+Dr.Jelly: Maybe a box of Dr.Jelly(tm) can help?
+I'd rather pass.
 <<EndConversation>>
 ===
 title: Dawg
@@ -95,18 +110,33 @@ position: 29,-299
 title: DawgGratitude
 position: 475,-455
 ---
+Dawg: AWOOOOOOO!
+He let out a soulful howl. I guessed he really liked it!
+<<RewardRelationshipPoints 0 3>>
+<<EndConversation>>
 ===
 title: DawgSatisfied
 position: 249,-455
 ---
+Dawg: Woof!
+He seems thankful.
+<<RewardRelationshipPoints 0 1>>
+<<EndConversation>>
 ===
 title: DawgDisgratitude
 position: 26,-455
 ---
+Dawg: Grrrrrr.
+I shouldn't give give that to him again.
+<<RewardRelationshipPoints 0 -1>>
+<<EndConversation>>
 ===
 title: DawgNevermind
 position: 700,-455
 ---
+Dawg: Hmph?
+Dawg seems confused.
+<<EndConversation>>
 ===
 title: VoidWalker
 position: -204,146
@@ -127,18 +157,36 @@ position: 29,290
 title: VoidWalkerGratitude
 position: 475,146
 ---
+Void Walker: It has been a long time since I havve felt gratitude such as this.
+You: No problem.
+It means a lot coming from him.
+<<RewardRelationshipPoints 2 3>>
+<<EndConversation>>
 ===
 title: VoidWalkerSatisfied
 position: 249,146
 ---
+Void Walker: Material goods have lost their effect on me.
+You: You don't like it?
+Void Walker: I no longer feel "like" or "dislike" anymore.
+Yeah, that's a lie.
+<<RewardRelationshipPoints 2 1>>
+<<EndConversation>>
 ===
 title: VoidWalkerDisgratitude
 position: 29,146
 ---
+Void Walker: Items such as these should have never existed.
+You: Oh? I'm sorry.
+He didn't like that.
+<<RewardRelationshipPoints 2 -1>>
 ===
 title: VoidWalkerNevermind
 position: 700,146
 ---
+Void Walker: Such indecisiveness will only be a detriment in the greater universe.
+You: I'll take a note of that.
+<<EndConversation>>
 ===
 title: Jimmy
 position: -204,439
@@ -159,18 +207,38 @@ position: 29,595
 title: JimmyGratitude
 position: 475,439
 ---
+Jimmy: Hey! Hey! This is something outside the norm!
+You: Sure?
+He really vibes with it. I shouldn't tell him that you can find these lying around.
+<<RewardRelationshipPoints 3 3>>
+<<EndConversation>>
 ===
 title: JimmySatisfied
 position: 249,439
 ---
+Jimmy: Thanks, I guess. Maybe I could find a place for this.
+He seems to like it... unless he throws it away when I'm not looking.
+<<RewardRelationshipPoints 3 1>>
+<<EndConversation>>
 ===
 title: JimmyDisgratitude
 position: 29,439
 ---
+Jimmy: What is this? You trying to pull me under the man?
+You: I just thought you'd-
+Jimmy: You're just like the rest of them. Get out of my sight.
+That's harsh. I'm sure he doesn't mean that... Hopefully.
+<<RewardRelationshipPoints 3 -1>>
+<<EndConversation>>
 ===
 title: JimmyNevermind
 position: 700,439
 ---
+Jimmy: Changed your mind?
+You: Yeah. Sorry.
+Jimmy: No problem. Just so you know, that's how they control you. They convince you-
+This is gonna be a lecture, but he's so into it that I don't think he'd notice if I leave.
+<<EndConversation>>
 ===
 title: FarmerJill
 position: -204,746
@@ -191,20 +259,39 @@ position: 29,895
 title: FarmerJillGratitude
 position: 475,746
 ---
+FarmerJill: Aww, doll, you didn't have to do this!
+You: My pleasure.
+It seems it touched her heart.
+<<RewardRelationshipPoints 4 3>>
+<<EndConversation>>
 ===
 title: FarmerJillSatisfied
 position: 249,746
 ---
+Farmer Jill: Thank you, doll.
+She's being modest. I guess it didn't have much of an impact.
+<<RewardRelationshipPoints 4 1>>
+<<EndConversation>>
 ===
 title: FarmerJillDisgratitude
 position: 29,746
 ---
+Farmer Jill: You know boy! Why I oughta-
+You: Sorry! Sorry.
+I do not want to get on her bad side.
+<<RewardRelationshipPoints 4 -1>>
+<<EndConversation>>
 ===
 title: FarmerJillNevermind
 position: 700,746
 ---
+You: Actually, nevermind.
+Farmer Jill: There's not enough sunshine in the day for "nevermind."
+I should keep a note of that.
+<<EndConversation>>
 ===
 title: Storekeeper
 position: -204, 1050
 ---
+
 ===

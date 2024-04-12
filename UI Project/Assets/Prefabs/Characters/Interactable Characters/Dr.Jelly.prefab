@@ -431,11 +431,16 @@ MonoBehaviour:
   isLevelUpReady: 0
   isMaxLevel: 0
   withdrawRate: 5
-  levelUpThresholds: 010000000200000003000000
-  likedGifts: []
+  levelUpThresholds: 050000000a0000000f000000
+  likedGifts:
+  - {fileID: 8378481988395674684, guid: 9940adb05b82a784aa74069192078546, type: 3}
+  - {fileID: 1599814202068556829, guid: 8e6673de25d21b84e85b9ef522a1d10c, type: 3}
   dislikedGifts:
   - {fileID: 6748282665299953372, guid: eab2beb5687038545b842e098b00524d, type: 3}
+  - {fileID: 1629215136381488302, guid: d9d25c7db34f3ab4991d207cfe5fa50b, type: 3}
+  - {fileID: 7550608075089066212, guid: 91a67d1528e9b8b42a1efe55b9311666, type: 3}
   dialogueRunner: {fileID: 0}
+  storage: {fileID: 0}
   relationshipBank: {fileID: 11400000, guid: 746d1f01c32ef9548b1af342c34438ed, type: 2}
 --- !u!114 &8409962601679661664
 MonoBehaviour:

@@ -30,6 +30,12 @@ public class YarnFunctions : MonoBehaviour
         relationshipBank.LevelUp(characterIndex);
     }
 
+    [YarnCommand("RewardRelationshipPoints")]
+    public static void RewardRelationshipPoints(int characterIndex, int points)
+    {
+        relationshipBank.relationshipPoints[characterIndex] += points;
+    }
+
     //Don't worry about this one too :)
     [YarnCommand("UpdateOnTeamStatus")]
     public static void UpdateOnTeamStatus(int characterIndex)
