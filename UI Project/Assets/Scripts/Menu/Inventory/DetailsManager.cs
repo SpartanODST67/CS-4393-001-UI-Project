@@ -2,15 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class DetailsManager : MonoBehaviour
 {
-    [Header("Menu Elements")]
+    [Header("Inventory Menu Elements")]
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI itemQuantity;
     [SerializeField] TextMeshProUGUI itemDescription;
     [SerializeField] TextMeshProUGUI itemBuyPrice;
     [SerializeField] TextMeshProUGUI itemSellPrice;
+
+    [Header("Relationships Menu Elements")]
+    [SerializeField] TextMeshProUGUI characterName;
+    [SerializeField] TextMeshProUGUI characterLevel;
+    [SerializeField] TextMeshProUGUI characterDescription;
+    [SerializeField] ProgressBar progressBar;
+    [SerializeField] PopulateItemLists likesList;
+    [SerializeField] PopulateItemLists dislikesList;
 
     public void Open()
     {
@@ -60,5 +70,40 @@ public class DetailsManager : MonoBehaviour
     public void SetItemSellPrice(int sellPrice)
     {
         itemSellPrice.text = "Sell For: $" + sellPrice.ToString();
+    }
+
+    public void SetCharacterName(string name)
+    {
+        characterName.text = name;
+    }
+
+    public void SetCharacterDescription(string description)
+    {
+        characterDescription.text = description;
+    }
+
+    public void SetCharacterLevel(string level)
+    {
+        characterLevel.text = level;
+    }
+
+    public void SetCharacterLevel(int level)
+    {
+        characterLevel.text = level.ToString();
+    }
+
+    public void SetProgressBar(Vector2 progress)
+    {
+        progressBar.UpdateProgress((int) progress.x, (int) progress.y);
+    }
+
+    public void SetLikeItems(List<Item> likedItems)
+    {
+        likesList.PopulateList(likedItems);
+    }
+
+    public void SetDislikeItems(List<Item> likedItems)
+    {
+        dislikesList.PopulateList(likedItems);
     }
 }

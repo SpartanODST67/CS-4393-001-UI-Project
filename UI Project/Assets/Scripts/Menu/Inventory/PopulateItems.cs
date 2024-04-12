@@ -10,7 +10,7 @@ public class PopulateItems : MonoBehaviour
     [SerializeField] GameObject buttonPrefab;
     [SerializeField] DetailsManager detailsPage;
 
-    private void Start()
+    private void OnEnable()
     {
         LoadItems();
     }

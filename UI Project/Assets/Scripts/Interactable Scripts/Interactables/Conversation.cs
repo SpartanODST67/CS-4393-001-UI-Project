@@ -20,6 +20,7 @@ public class Conversation : MonoBehaviour, Interactable
     [SerializeField] int relationshipLevel = 0;
     [SerializeField] int relationshipPoints = 0;
     [SerializeField] string characterName; //Used to denote which dialogue node to start
+    [SerializeField] string characterDescription;
     [SerializeField] bool isQuestComplete;
     [SerializeField] bool isOnTeam;
     [SerializeField] bool isLevelUpReady;
@@ -190,5 +191,30 @@ public class Conversation : MonoBehaviour, Interactable
             }
         }
         return false;
+    }
+
+    public string GetCharacterName()
+    {
+        return characterName;
+    }
+
+    public string GetCharacterDescription()
+    {
+        return characterDescription;
+    }
+
+    public int GetCurrentThreshold()
+    {
+        return levelUpThresholds[relationshipLevel];
+    }
+
+    public List<Item> GetLikedItems()
+    {
+        return likedGifts;
+    }
+
+    public List<Item> GetDislikedItems()
+    {
+        return dislikedGifts;
     }
 }

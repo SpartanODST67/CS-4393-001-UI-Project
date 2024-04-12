@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/RelationshipBank")]
 public class RelationshipBank : ScriptableObject
 {
+    public List<Conversation> characters = new List<Conversation>();
     public List<int> relationshipLevels = new List<int>();
     public List<int> relationshipPoints = new List<int>();
     public List<bool> onTeam = new List<bool>();
