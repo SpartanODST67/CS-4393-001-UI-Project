@@ -27,6 +27,7 @@ public class SaveGameManager : MonoBehaviour
 
     IEnumerator PopulateSaveFiles(string[] saveFiles)
     {
+        fileNames.Clear();
         for (int i = transform.childCount - 1; i > 0; i--)
         {
             Destroy(transform.GetChild(i).gameObject);
