@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using System.IO;
+using System;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -55,17 +56,15 @@ public class SaveSystem : MonoBehaviour
             Directory.CreateDirectory(folderPath);
         }
 
-        if(!File.Exists(filePath))
+        try
         {
             using (StreamWriter sw = File.CreateText(filePath))
             {
                 sw.WriteLine(saveData.ToString());
             }
-        }
-        else
+        } catch (Exception e)
         {
-            StreamWriter newFile = File.CreateText(filePath);
-            newFile.Write(saveData.ToString());
+            throw e;
         }
     }
 

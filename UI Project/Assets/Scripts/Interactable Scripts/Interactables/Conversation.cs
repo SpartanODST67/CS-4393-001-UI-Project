@@ -69,7 +69,7 @@ public class Conversation : MonoBehaviour, Interactable
             relationshipPoints = relationshipBank.GetRelationshipPoints(characterIndex);
             relationshipLevel = relationshipBank.GetRelationshipLevel(characterIndex);
             isOnTeam = relationshipBank.IsOnTeam(characterIndex);
-        } catch (Exception e)
+        } catch
         {
             Debug.Log("whoops");
         }
