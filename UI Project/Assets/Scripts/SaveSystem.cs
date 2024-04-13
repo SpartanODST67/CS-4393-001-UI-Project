@@ -14,6 +14,29 @@ public class SaveSystem : MonoBehaviour
     [SerializeField] string fileName;
     [SerializeField] string folderPath = "./Resources/Save Files/";
 
+    public static SaveSystem instance { get; private set; }
+
+    private void Awake()
+    {
+        Singleton();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Singleton()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            return;
+        }
+        Destroy(gameObject);
+    }
+
+    public void SetFileName(string fileName)
+    {
+        this.fileName = fileName;
+    }
+
     public void SaveGame()
     {
         StringBuilder path = new StringBuilder(folderPath);

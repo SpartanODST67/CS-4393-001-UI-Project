@@ -8,6 +8,7 @@ public class InputHandler : MonoBehaviour
     [SerializeField] PlayerController player;
     [SerializeField] CinemachineBrain cameraBrain;
     [SerializeField] Controls controls;
+    [SerializeField] MenuManager menuManager;
     private Vector3 inputVector = new Vector3();
     private float horizontalInput;
     private float verticalInput;
@@ -16,6 +17,12 @@ public class InputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(controls.keys[(int) ControlKeys.INVENTORY]))
+        {
+            menuManager.ActivateInventory(2);
+            gameObject.SetActive(false);
+            return;
+        }
         if (Input.GetKey(controls.keys[(int) ControlKeys.LEFT]))
         {
             horizontalInput = -1;
