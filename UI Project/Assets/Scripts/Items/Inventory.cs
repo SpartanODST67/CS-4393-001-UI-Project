@@ -42,6 +42,22 @@ public class Inventory : ScriptableObject
         return itemQuantities[index];
     }
 
+    public void InitializeInventory()
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            try
+            {
+                itemQuantities[i] = 0;
+            }
+            catch
+            {
+                itemQuantities.Add(0);
+            }
+        }
+        wallet = 0;
+    }
+
     //Takes a csv line and converts it to the inventory quantities.
     public void FromCSV(string line)
     {

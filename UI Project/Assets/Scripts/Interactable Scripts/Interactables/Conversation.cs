@@ -64,9 +64,15 @@ public class Conversation : MonoBehaviour, Interactable
 
     private void WithdrawRelationshipValues()
     {
-        relationshipPoints = relationshipBank.GetRelationshipPoints(characterIndex);
-        relationshipLevel = relationshipBank.GetRelationshipLevel(characterIndex);
-        isOnTeam = relationshipBank.IsOnTeam(characterIndex);
+        try
+        {
+            relationshipPoints = relationshipBank.GetRelationshipPoints(characterIndex);
+            relationshipLevel = relationshipBank.GetRelationshipLevel(characterIndex);
+            isOnTeam = relationshipBank.IsOnTeam(characterIndex);
+        } catch (Exception e)
+        {
+            Debug.Log("whoops");
+        }
     }
 
     IEnumerator PassiveWithdraw()

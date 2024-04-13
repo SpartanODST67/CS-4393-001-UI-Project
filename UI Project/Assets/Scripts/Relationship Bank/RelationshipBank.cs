@@ -83,6 +83,22 @@ public class RelationshipBank : ScriptableObject
         }
     }
 
+    public void InitializeRelationshipBank()
+    {
+        for(int i = 0; i < characters.Count; i++)
+        {
+            try
+            {
+                relationshipLevels[i] = 0;
+                relationshipPoints[i] = 0;
+            } catch
+            {
+                relationshipLevels.Add(0);
+                relationshipPoints.Add(0);
+            }
+        }
+    }
+
     public string ToCSV()
     {
         StringBuilder fullString = new StringBuilder();

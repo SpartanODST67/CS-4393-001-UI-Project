@@ -12,7 +12,7 @@ public class SaveSystem : MonoBehaviour
 
     [Header("Save Location")]
     [SerializeField] string fileName;
-    [SerializeField] string folderPath = "./Resources/Save Files/";
+    [SerializeField] string folderPath = "./Saves/";
 
     public static SaveSystem instance { get; private set; }
 
