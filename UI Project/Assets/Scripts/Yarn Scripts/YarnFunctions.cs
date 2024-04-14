@@ -70,4 +70,10 @@ public class YarnFunctions : MonoBehaviour
     {
         menuManager.ActivateInventory(mode);
     }
+
+    [YarnCommand("OpenStore")]
+    public static void OpenStore()
+    {
+        menuManager.ActivateStoreInventory();
+    }
 }

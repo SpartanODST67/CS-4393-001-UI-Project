@@ -15,8 +15,6 @@ public class InventoryScreenManager : MonoBehaviour
     [SerializeField] GameObject nevermindButton;
     [Header("Buttons in the details page")]
     [SerializeField] GameObject giftButton;
-    [SerializeField] GameObject buyButton;
-    [SerializeField] GameObject sellButton;
     [SerializeField] GameObject discardButton;
 
     private void OnEnable()
@@ -28,8 +26,6 @@ public class InventoryScreenManager : MonoBehaviour
                 fullBackButton.SetActive(false);
                 nevermindButton.SetActive(true);
                 giftButton.SetActive(true);
-                buyButton.SetActive(false);
-                sellButton.SetActive(false);
                 discardButton.SetActive(false);
                 break;
             case 2:
@@ -37,8 +33,6 @@ public class InventoryScreenManager : MonoBehaviour
                 fullBackButton.SetActive(true);
                 nevermindButton.SetActive(false);
                 giftButton.SetActive(false);
-                buyButton.SetActive(false);
-                sellButton.SetActive(false);
                 discardButton.SetActive(true);
                 discardButton.GetComponent<Button>().onClick.AddListener(() =>
                 {
@@ -50,8 +44,6 @@ public class InventoryScreenManager : MonoBehaviour
                 fullBackButton.SetActive(false);
                 nevermindButton.SetActive(false);
                 giftButton.SetActive(false);
-                buyButton.SetActive(false);
-                sellButton.SetActive(false);
                 discardButton.SetActive(true);
                 discardButton.GetComponent<Button>().onClick.AddListener(() =>
                 {

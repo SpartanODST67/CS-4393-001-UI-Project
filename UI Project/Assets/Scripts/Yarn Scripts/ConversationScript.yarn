@@ -293,5 +293,17 @@ I should keep a note of that.
 title: Storekeeper
 position: -204, 1050
 ---
-
+Storekeeper: What may I do for you today?
+->You: I want to shop.
+    Storekeeper: Behold, my wares.
+    <<OpenStore>>
+->You: Actually, nevermind.
+    Storekeeper: Buy something nextime.
+    <<EndConversation>> 
+===
+title: StorekeeperGoodbye
+position: 29, 1050
+---
+Storekeeper: Thank you, stranger. Hope to see you again.
+<<EndConversation>>
 ===
