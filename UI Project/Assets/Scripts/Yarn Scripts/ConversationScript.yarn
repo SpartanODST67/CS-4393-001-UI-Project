@@ -298,7 +298,7 @@ Storekeeper: What may I do for you today?
     Storekeeper: Behold, my wares.
     <<OpenStore>>
 ->You: Actually, nevermind.
-    Storekeeper: Buy something nextime.
+    Storekeeper: Buy something next time.
     <<EndConversation>> 
 ===
 title: StorekeeperGoodbye
