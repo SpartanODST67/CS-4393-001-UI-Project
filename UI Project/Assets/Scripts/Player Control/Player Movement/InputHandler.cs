@@ -6,6 +6,7 @@ using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
     [SerializeField] PlayerController player;
+    [SerializeField] AnimationController playerAnimator; 
     [SerializeField] CinemachineBrain cameraBrain;
     [SerializeField] Controls controls;
     [SerializeField] MenuManager menuManager;
@@ -45,6 +46,15 @@ public class InputHandler : MonoBehaviour
         {
             sprintInput = 1;
         }
+
+        if(horizontalInput != 0 || verticalInput != 0)
+        {
+            playerAnimator.Walk();
+        }
+        else
+        {
+            playerAnimator.Stand();
+        }
         inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetAxis("Sprint"));
         inputVector = new Vector3(horizontalInput, verticalInput, sprintInput);
         player.Sprint(inputVector.z);
@@ -69,6 +79,10 @@ public class InputHandler : MonoBehaviour
         if (cameraBrain != null)
         {
             cameraBrain.enabled = false;
+        }
+        if(playerAnimator != null)
+        {
+            playerAnimator.Stand();
         }
     }
 
