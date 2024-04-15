@@ -1886,7 +1886,6 @@ GameObject:
   - component: {fileID: 375861226}
   - component: {fileID: 375861225}
   - component: {fileID: 375861229}
-  - component: {fileID: 375861230}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1971,7 +1970,6 @@ RectTransform:
   m_Children:
   - {fileID: 1666705}
   - {fileID: 1091804587}
-  - {fileID: 375913962}
   - {fileID: 120396788}
   - {fileID: 1148928830}
   m_Father: {fileID: 0}
@@ -2007,6 +2005,7 @@ GameObject:
   - component: {fileID: 375913962}
   - component: {fileID: 375913964}
   - component: {fileID: 375913963}
+  - component: {fileID: 375913965}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -2026,12 +2025,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 375861228}
+  m_Father: {fileID: 1091804587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -694, y: 324}
-  m_SizeDelta: {x: -1420, y: -764.47974}
+  m_SizeDelta: {x: 400, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375913963
 MonoBehaviour:
@@ -2130,6 +2129,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375913961}
   m_CullTransparentMesh: 1
+--- !u!114 &375913965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375913961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d52c398d6e508e428bb1c7d8f0083e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteractionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnInteractionAbort:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ForceStartHere: 0
+  m_ManualPositionOrder: -1
+  m_ManualPositionParent: {fileID: 0}
+  m_UseTargetForOutline: 0
+  m_PositionOrder: 0
+  m_SecondaryOrder: 0
+  m_Pos: {x: 0, y: 0}
+  m_TextAsAudio: {fileID: 0}
+  m_Prefix: 
+  m_PrefixIsLocalizationKey: 0
+  m_PrefixIsPostFix: 0
+  m_FilterText: 1
+  m_Text: A Day in the Park
+  m_NameLabel: {fileID: 375913961}
+  m_AdditionalNameLabels: []
+  m_TestList: []
+  m_IsLocalizationKey: 0
+  m_TryToReadLabel: 1
+  m_ReferenceElement: {fileID: 0}
+  m_AllowVoiceOver: 1
+  m_ReadType: 1
+  m_WasJustAdded: 1
+  m_Type: 2
+  m_CustomHint: 0
+  m_HintAsAudio: {fileID: 0}
+  m_Hint: 
+  m_HintIsLocalizationKey: 0
+  m_IsInsideScrollView: 0
+  m_IsInitialized: 1
+  m_CallbackOnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &384012867
 GameObject:
   m_ObjectHideFlags: 0
@@ -4749,6 +4801,7 @@ RectTransform:
   - {fileID: 1132912767}
   - {fileID: 229922476}
   - {fileID: 151704806}
+  - {fileID: 375913962}
   m_Father: {fileID: 375861228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
