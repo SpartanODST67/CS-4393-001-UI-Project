@@ -19,6 +19,7 @@ TagManager:
   - Input Handler
   - Notification Manager
   - Game Menus
+  - Accessibility
   layers:
   - Default
   - TransparentFX

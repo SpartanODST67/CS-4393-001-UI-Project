@@ -50,8 +50,6 @@ public class PopulateItems : MonoBehaviour
                 detailsPage.SetItemName(inventory.items[buttonItem.GetIndex()].GetItemName());
                 detailsPage.SetItemQuantity(inventory.itemQuantities[buttonItem.GetIndex()]);
                 detailsPage.SetItemDescription(inventory.items[buttonItem.GetIndex()].GetDescription());
-                detailsPage.SetItemBuyPrice(inventory.items[buttonItem.GetIndex()].GetBuyPrice());
-                detailsPage.SetItemSellPrice(inventory.items[buttonItem.GetIndex()].GetSellPrice());
                 itemTransfer.SetItemID(buttonItem.GetIndex());
                 detailsPage.Open(); 
             });
