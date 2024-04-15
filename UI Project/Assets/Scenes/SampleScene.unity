@@ -9813,6 +9813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102696679}
   - component: {fileID: 1102696680}
+  - component: {fileID: 1102696681}
   m_Layer: 5
   m_Name: Pickup Notifications
   m_TagString: Notification Manager
@@ -9865,6 +9866,31 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1102696681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102696678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PopUp: 1
+  m_AllowExternalJoining: 0
+  m_AutoRead: 1
+  m_Priority: 0
+  m_ContainerName: 
+  m_IsLocalizationKey: 0
+  m_2DNavigation: 0
+  m_ConstrainToContainerUp: 0
+  m_ConstrainToContainerDown: 0
+  m_ConstrainToContainerLeft: 0
+  m_ConstrainToContainerRight: 0
+  m_AllowTouchExplore: 1
+  m_DoubleCheckUIElementsPositions: 1
 --- !u!1001 &1126304905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20367,15 +20393,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992676580799311654, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2873243
+      value: 0.28732428
       objectReference: {fileID: 0}
     - target: {fileID: 2992676580799311654, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.50428474
+      value: 0.5042847
       objectReference: {fileID: 0}
     - target: {fileID: 2992676580799311654, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.18257618
+      value: -0.18257615
       objectReference: {fileID: 0}
     - target: {fileID: 3785254180680668110, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: cam
@@ -20435,19 +20461,19 @@ PrefabInstance:
       objectReference: {fileID: 1021533887}
     - target: {fileID: 6101292973128353977, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8180543
+      value: 0.81805426
       objectReference: {fileID: 0}
     - target: {fileID: 6101292973128353977, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.20772606
+      value: 0.20772608
       objectReference: {fileID: 0}
     - target: {fileID: 6101292973128353977, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.51982117
+      value: 0.5198211
       objectReference: {fileID: 0}
     - target: {fileID: 6101292973128353977, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.13199662
+      value: -0.1319966
       objectReference: {fileID: 0}
     - target: {fileID: 7922529302023139597, guid: 8c609f785ea19414092f8dbd5adf3eab, type: 3}
       propertyPath: m_LocalPosition.x
