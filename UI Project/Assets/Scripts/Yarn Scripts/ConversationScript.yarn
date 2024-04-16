@@ -6,8 +6,8 @@ position: -204,-608
 title: DrJelly
 position: -204,-140
 ---
-Dr.Jelly: Hello, my name is Dr.Jelly, desu.
--> You: Are you really a doctor? I thought you were just the face of a food brand. 
+Dr. Jelly: Hello, my name is Dr. Jelly, desu.
+-> You: Have I've seen you somewhere before? 
     <<if $levelUp is true>>
         <<if $relationshipLevel == 0>>
             <<jump DrJelly1>>
@@ -16,13 +16,17 @@ Dr.Jelly: Hello, my name is Dr.Jelly, desu.
         <<elseif $relationshipLevel == 2>>
             <<jump DrJelly3>>
         <<else>>
-            Dr.Jelly: We're already friends enough, are we?
+            Joey: I know that's a joke. Thanks for giving me a chance. I mean it.
         <<endif>>
     <<else>>
-        Dr.Jelly: I don't want to talk right now.
+        <<if $relationshipLevel == 3>>
+            Joey: I know that's a joke. Thanks for giving me a chance. I mean it.
+        <<else>>
+            Dr. Jelly: I'm sure you have. Take a look around and jog your memory.
+        <<endif>>
     <<endif>>
 -> You: I want to give you something.
-    Dr.Jelly: Oh really?
+    Dr. Jelly: Oh really?
     <<OpenInventory 1>>
     <<stop>>
 -> You: Nevermind.
@@ -31,21 +35,74 @@ Dr.Jelly: Hello, my name is Dr.Jelly, desu.
 title: DrJelly1
 position: -427,10
 ---
-Dr.Jelly: I'm level {$relationshipLevel}
+Dr. Jelly: Umm, hello? I'm Dr. Jelly™.
+You: ...
+Dr. Jelly: As in Dr. Jelly Energy Gel™?
+-> You: Oh! That Dr. Jelly!
+    Dr. Jelly: Perhaps you need some Dr. Jelly Energy Gel™ yourself.
+    <<RewardRelationshipPoints 1 1>>
+-> You: Doesn't ring a bell.
+    Dr. Jelly: What? Have you never had Dr. Jelly Energy Gel™?
+Dr. Jelly: How about Dr. Jelly Hair Energy Gel™, or Dr. Jelly Energy Lotion™.
+You: Do those actually give you energy or is that just the ™ talking?
+Dr. Jelly: Trade secret.
+You: Well, I'm not too interested in Dr. Jelly products.
+Dr. Jelly: What did you say? I'll let you know that Dr. Jelly Energy Gel™ is on the the highest selling energy products in the market. In fact...
+He seems really pationate about this. I don't know why he's so compelled to sell me the gel, but it must be important to him.
+I feel like I'm closer to Dr. Jelly.
 <<RelationshipLevelUp 1>>
 <<EndConversation>>
 ===
 title: DrJelly2
 position: -204,10
 ---
-Dr.Jelly: I'm level {$relationshipLevel}
+Dr. Jelly: Do you have short term memory loss or something?
+You: I don't think so.
+Dr. Jelly: Maybe a packet of Dr. Jelly Memory Gel™ would help?
+You: Is that a new product?
+Dr. Jelly: It's come to my attention that there are certain *gaps* in the market, so I decided to prototype a few new products.
+Dr. Jelly: You're a construction worker, right?
+You: Yeah.
+Dr. Jelly: How about you try some Dr. Jelly Energy Absorption Gel™? It's a gel that can absorb any impact and works better than your hard hat.
+Dr. Jelly: What do you say?
+-> You: That's extremely stupid.
+    Dr. Jelly: YOU TAKE THAT BACK RIGHT NOW!
+-> You: Sounds worth while.
+    Dr. Jelly: Great. Would you like to preorder?
+    <<RewardRelationshipPoints 1 1>>
+    You: Not right now.
+Dr. Jelly: Come on. How can I get you to buy a Dr. Jelly product. What if I...
+He's mumbling to himself now. Why does he care so much that I buy his products?
+I feel like I'm closer to Dr. Jelly.
 <<RelationshipLevelUp 1>>
 <<EndConversation>>
 ===
 title: DrJelly3
 position: 29,10
 ---
-Dr.Jelly: I'm level {$relationshipLevel}
+Dr. Jelly: You keep talking to me and you still don't remember me?
+You: I was only joking.
+Dr. Jelly: Maybe Dr. Jelly Shut Up Gel™ can fix that.
+You: Yeah. Probably.
+Dr. Jelly: Well, the Dr. Jelly Shut Up Gel™ doesn't actually exist yet. But I do have other-
+You: Why do you care so much?
+Dr. Jelly: About what?
+You: Why do you care so much about selling Dr. Jelly™ to me?
+Dr. Jelly: I- uh- promise not to laugh.
+-> You: Promise.
+-> You: No promises.
+    Dr. Jelly: Now I don't want to tell you, but you've been so nice to me so far.
+Dr. Jelly: I started up Dr. Jelly™ last year and it's been a massive success. I was able to go from a broke college student to a massively successful CEO.
+Dr. Jelly: But, sales have been decreasing lately and I'm terrified about going back to before Dr. Jelly™.
+You: So that's why.
+Dr. Jelly: My real name is Joey.
+You: You know what, Joey? Maybe I might try some Dr. Jelly Energy Gel™ the next time I see it in the store.
+Joey: Really?
+You: Yeah.
+I can see the joy in his face.
+Dr. Jelly: The marketing pitch work! Yeahahaha!
+I'm sure this wasn't only a marketing pitch.
+I feel like I'm as close as I'll ever be with Joey.
 <<RelationshipLevelUp 1>>
 <<EndConversation>>
 ===
@@ -91,21 +148,113 @@ I'd rather pass.
 title: Dawg
 position: -204,-455
 ---
-<<jump Dawg1>>
-<<jump Dawg2>>
-<<jump Dawg3>>
+Dawg: Woof, woof!
+-> You: Wanna play, boy? 
+    <<if $levelUp is true>>
+        <<if $relationshipLevel == 0>>
+            <<jump Dawg1>>
+        <<elseif $relationshipLevel == 1>>
+            <<jump Dawg2>>
+        <<elseif $relationshipLevel == 2>>
+            <<jump Dawg3>>
+        <<else>>
+            Dawg: Bark! Woof! Howl!
+            Dawg really trusts me.
+        <<endif>>
+    <<else>>
+        <<if $relationshipLevel == 3>>
+            Dawg: Bark! Woof! Howl!
+            Dawg really trusts me.
+        <<else>>
+            Dawg: Awoo.
+            Dawg doesn't seem to have the energy to play.
+        <<endif>>
+    <<endif>>
+-> You: I want to give you something.
+    Dawg: Awoof?
+    <<OpenInventory 1>>
+    <<stop>>
+-> You: Nevermind.
+    Dawg: *Whine*
+<<EndConversation>>
 ===
 title: Dawg1
 position: -418,-299
 ---
+Dawg seems really excited that I invited him to play.
+His tail is wagging, his tongue is out, and he's shaking with energy.
+A bird lands infront of Dawg.
+-> You: Don't do anything to the bird.
+    Dawg looks up at me as if he's offended by what I said.
+    Dawg looks back at the bird.
+-> You: Look, it's a bird.
+    Dawg smiles as if he's happy that I trust him.
+    <<RewardRelationshipPoints 0 1>>
+Dawg stares at the bird. He lays down.
+It doesn't look like he'll hurt the bird.
+The bird flies off.
+Dawg stands up as if he's seeing the bird out.
+You: That was nice. Want to play?
+Dawg yawns.
+He seems too tired to play now.
+I feel like I'm closer to Dawg.
+<<RelationshipLevelUp 0>>
+<<EndConversation>>
 ===
 title: Dawg2
 position: -204,-299
 ---
+Dawg is overjoyed that I invited him again.
+What's this? He already has a ball in his mouth.
+The ball seems really old.
+-> You: Is this ball special to you?
+    Dawg: Awoof.
+    Dawg nods in agreement.
+    <<RewardRelationshipPoints 0 1>>
+-> You: Let me throw that ball.
+    Dawg: Grrrr.
+    Okay, I guess the ball is too special to play catch with.
+You: Can I see the ball.
+Dawg: Mrph.
+Dawg seems to be weighing his odds.
+He eventually gives me the ball.
+The ball is ragged as if Dawg has had it for years.
+Maybe ever since he was a puppy.
+There's a name on it, "Stacy."
+I feel like I've seen that name before.
+You: Is Stacy your owner?
+Dawg: *Whine*.
+Dawg doesn't seem like he wants to talk about her.
+You: I'm sorry, Dawg.
+Dawg seems to be ignoring me now.
+I feel like I'm closer to Dawg.
+<<RelationshipLevelUp 0>>
+<<EndConversation>>
 ===
 title: Dawg3
 position: 29,-299
 ---
+What is this? Dawg is holding a colar in his mouth.
+He puts it on the ground and nudges it towards me.
+Dawg: Hmph.
+He wants me to look at it.
+"Name - Dawg. If lost, return to Stacy Wallace."
+"Stacy Wallace." I know her.
+I knew her.
+She isn't around anymore.
+I guess Dawg was her dog.
+I wonder why he gave me his colar.
+-> You: Do you want to live with me?
+    Dawg: Woof!
+    Dawg is ecstatic that I invited him to live with me.
+-> You: Maybe I can find you a place to stay.
+    Dawg: Mrph.
+    Dawg doesn't seem to care too much.
+I know Stacy meant a lot to him. It must mean a lot for him to give me his colar.
+I'm sure he trusts me.
+I feel like I'm as close as I'll ever be with Dawg.
+<<RelationshipLevelUp 0>>
+<<EndConversation>>
 ===
 title: DawgGratitude
 position: 475,-455
@@ -141,26 +290,114 @@ Dawg seems confused.
 title: VoidWalker
 position: -204,146
 ---
+Void Walker: You wish to speak to me?
+-> You: I do.
+    <<if $levelUp is true>>
+        <<if $relationshipLevel == 0>>
+            <<jump VoidWalker1>>
+        <<elseif $relationshipLevel == 1>>
+            <<jump VoidWalker2>>
+        <<elseif $relationshipLevel == 2>>
+            <<jump VoidWalker3>>
+        <<else>>
+            Void Walker: Remeber, no matter the path taken, You are you.
+        <<endif>>
+    <<else>>
+        <<if $relationshipLevel == 3>>
+            Void Walker: Remeber, no matter the path taken, You are you.
+        <<else>>
+            Void Walker: A moment of time is a moment lost to eternity.
+        <<endif>>
+    <<endif>>
+-> You: I want to give you something.
+    Void Walker: I do not feel much for gifts anymore.
+    <<OpenInventory 1>>
+    <<stop>>
+-> You: Nevermind.
+<<EndConversation>>
 ===
 title: VoidWalker1
 position: -418,290
 ---
+You: So, uhh, not to offend you but-
+Void Walker: I do not feel such emotions any longer.
+You: Okay, uhh, so what are you?
+Void Walker: That is a question that may spend their entire beings on answering. It has come to a point where to answer such question is a fool's journey.
+You: But... like... you're not exactly human?
+Void Walker: How do you define human? Is it the morphology? Is it the certain way the arms and legs are formed?
+Void Walker: Or is it the soul? The ability to think and breath for the self?
+Void Walker: What exactly is the soul? What exactly is the self?
+Void Walker: Do you understand what I am saying?
+-> You: Yeah, kinda.
+    Void Walker: No man can truely understand the construct of the universe.
+-> You: Not at all.
+    Void Walker: As it should be. The universe is too complicated for one man to know it all.
+    <<RewardRelationshipPoints 4 1>>
+Void Walker: However, if you are compelled to search for the solution of life, you will come to same conclusion that I have.
+You: And that is?
+Void Walker: Now, if I were tell you, I would be robbing you of a journey that you may want to take.
+They got me there.
+I feel like I'm closer the Void Walker.
+<<RelationshipLevelUp 4>>
+<<EndConversation>>
 ===
 title: VoidWalker2
 position: -204,290
 ---
+Void Walker: Have you ever been in a situation where entities pressure you from all sides. Where this is no escape.
+Void Walker: Where the only path forward is to have your very psyche shatter across the cosmos searching for meaning.
+You: Is that what happened to you?
+Void Walker: What makes you think that?
+-> You: Was that not an explanation?
+    Void Walker: Perhaps it is. Perhaps it isn't.
+-> You: Was I wrong assuming that?
+    Void Walker: It is okay to be wrong. By being wrong, we can find missing pieces of ourselves.
+    <<RewardRelationshipPoints 4 1>>
+Void Walker: Explanation is one thing. Reality is another.
+Void Walker: As Explanation seeks to describe reality and put it in shape, Reality oftens breaks the mold explanation casts it to.
+Void Walker: However, no matter how often explanation's mold is broken, we always remold it to encapsulate reality.
+Void Walker: That is a special skill that we have. No matter how often we fail, we can always pick ourselves back up.
+Void Walker: And that is how I came upon my answer.
+You: And that is?
+Void Walker: Look within yourself. You have the answer too.
+They seem to believe that I can come to this answer too.
+I feel like I'm closer the Void Walker.
+<<RelationshipLevelUp 4>>
+<<EndConversation>>
 ===
 title: VoidWalker3
 position: 29,290
 ---
+Void Walker: Have you found the answer?
+You: I don't know.
+Void Walker: You just said it.
+You: "I don't know?"
+Void Walker: I.
+Void Walker: In a world full of "this" and "that," it is important to remember "I."
+Void Walker: Through the power of "I," you can get through any tributation.
+Void Walker: No matter how much they try to tear you down, "I" still makes it through.
+Void Walker: And, at the end, I am still here.
+Void Walker: After everything, I am still me.
+You: The person you once was is still there?
+Void Walker: Along with the person I am now and who I will be.
+Void Walker: Remember, no matter how tearible the road is, you can still make it to the end.
+Void Walker: As long as you remeber "I."
+...
+I don't know what to say.
+You: Thank you.
+Void Walker: No need to thank me.
+They truely believe in me.
+I feel like I'm as close as I'll ever be with the Void Walker.
+<<RelationshipLevelUp 4>>
+<<EndConversation>>
 ===
 title: VoidWalkerGratitude
 position: 475,146
 ---
 Void Walker: It has been a long time since I havve felt gratitude such as this.
 You: No problem.
-It means a lot coming from him.
-<<RewardRelationshipPoints 2 3>>
+It means a lot coming from them.
+<<RewardRelationshipPoints 4 3>>
 <<EndConversation>>
 ===
 title: VoidWalkerSatisfied
@@ -170,7 +407,7 @@ Void Walker: Material goods have lost their effect on me.
 You: You don't like it?
 Void Walker: I no longer feel "like" or "dislike" anymore.
 Yeah, that's a lie.
-<<RewardRelationshipPoints 2 1>>
+<<RewardRelationshipPoints 4 1>>
 <<EndConversation>>
 ===
 title: VoidWalkerDisgratitude
@@ -178,8 +415,9 @@ position: 29,146
 ---
 Void Walker: Items such as these should have never existed.
 You: Oh? I'm sorry.
-He didn't like that.
-<<RewardRelationshipPoints 2 -1>>
+They didn't like that.
+<<RewardRelationshipPoints 4 -1>>
+<<EndConversation>>
 ===
 title: VoidWalkerNevermind
 position: 700,146
@@ -191,18 +429,104 @@ You: I'll take a note of that.
 title: Jimmy
 position: -204,439
 ---
+Jimmy: Oi, what do you want?
+-> You: I just wanted to chat.
+    <<if $levelUp is true>>
+        <<if $relationshipLevel == 0>>
+            <<jump Jimmy1>>
+        <<elseif $relationshipLevel == 1>>
+            <<jump Jimmy2>>
+        <<elseif $relationshipLevel == 2>>
+            <<jump Jimmy3>>
+        <<else>>
+            Jimmy: Keep fighting the man, man.
+        <<endif>>
+    <<else>>
+        <<if $relationshipLevel == 3>>
+            Jimmy: Keep fighting the man, man.
+        <<else>>
+            Jimmy: Come back when you proved that you're not under the man.
+        <<endif>>
+    <<endif>>
+-> You: I want to give you something.
+    Jimmy: As long as it's not from the man.
+    <<OpenInventory 1>>
+    <<stop>>
+-> You: Nevermind.
+<<EndConversation>>
 ===
 title: Jimmy1
 position: -418,595
 ---
+Jimmy: Did the man send you?
+-> You: Who is the man?
+    Jimmy: That man! You know! You're living under him!
+    <<RewardRelationshipPoints 3 1>>
+-> You: Yes.
+    Jimmy: Nah. No way someone sent by the man would say they're from the man.
+    Then why did you ask?
+Jimmy: You're a construction worker, yeah? Well, you know the man more than anyone other than the man.
+Jimmy: You build the man's streets, the man's buildings, the man's utilities.
+You: Don't you need utilities?
+Jimmy: Who cares!? They're from the man!
+Jimmy: That's how the man get's you. He helps you live, then he gets you dependent on him, and then he controls you.
+You: What are you doing about it.
+Jimmy: I'm doing all I can.
+You: And that is?
+Jimmy: Living life the best I can. The way I want.
+Jimmy: You've been nice to me so far, so I'm sure you can fight against the man too.
+I guess he sees something in me.
+I feel like I'm closer to Jimmy.
+<<RelationshipLevelUp 3>>
+<<EndConversation>>
 ===
 title: Jimmy2
 position: -204,595
 ---
+Jimmy: How have you been sticking it to the man?
+-> You: I don't know how to.
+    Jimmy: We all have a start.
+    <<RewardRelationshipPoints 3 1>>
+-> You: I've been sticking it well.
+    Jimmy: No you have not. You're still wearing that hard hat.
+Jimmy: Sticking it to the man starts with the small things. Sleeping in, staying out later in the day, not picking up after your dog.
+You: Is that really sticking it to the man?
+Jimmy: But the easiest way to stick it to the man is just talking like what we're doing now.
+You: How is that sticking it to the man?
+Jimmy: Simple. By being lonely, you're easier to control. You don't have any connections to lead your life, so the only thing to lead your life is the man.
+Jimmy: Without other people, you don't learn anything. Don't hear anything that challenges you. The only thing you learn is from the man.
+You: Don't I always see you alone?
+Jimmy: That's - That's beside the point.
+Jimmy: I see you going around this park and talking to people. Getting to know their own world view.
+Jimmy: That is the best way to stick it to the man.
+Jimmy sounds proud of me.
+I feel like I'm closer to Jimmy.
+<<RelationshipLevelUp 3>>
+<<EndConversation>>
 ===
 title: Jimmy3
 position: 29,595
 ---
+You: So, why are you like this?
+Jimmy: Same reason as everyone else. Life just brought me here.
+Jimmy: My Ma and Pa weren't the wealthiest people growing up. So I ended up being an easy target for the rest of the kids at school.
+Jimmy: But I could never come to hate them. I looked at the teachers, and they did nothing.
+Jimmy: That's when I figured it out. The man wanted this to happen. Wanted us to hate each other.
+Jimmy: Because tearing us apart is easier than keeping us together.
+Jimmy: So, that's why I live like this today. Doing what I want, when I want, with who I want.
+Jimmy: And, that way, the man cannot control me.
+Jimmy sure has an interesting world view.
+Jimmy: Hey, how about we get rid of that hard hat of yours and get yourself a mohawk like mine.
+-> You: I'd rather not.
+-> You: Let's do it.
+    Jimmy: Yeah! Wait, don't you need the hard hat for your job.
+    You: I could find a new one.
+Jimmy: Hey, I'm not gonna force you. You control your own life.
+Jimmy: As long as you live free, you're good in my book.
+Jimmy sees me as an ally against the man.
+I feel like I'm as close as I'll ever be with Jimmy.
+<<RelationshipLevelUp 3>>
+<<EndConversation>>
 ===
 title: JimmyGratitude
 position: 475,439
@@ -243,18 +567,100 @@ This is gonna be a lecture, but he's so into it that I don't think he'd notice i
 title: FarmerJill
 position: -204,746
 ---
+Farmer Jill: Oh, hello, Darling.
+-> You: Wanna talk?
+    <<if $levelUp is true>>
+        <<if $relationshipLevel == 0>>
+            <<jump FarmerJill1>>
+        <<elseif $relationshipLevel == 1>>
+            <<jump FarmerJill2>>
+        <<elseif $relationshipLevel == 2>>
+            <<jump FarmerJill3>>
+        <<else>>
+            Farmer Jill: Keep fighting the man, man.
+        <<endif>>
+    <<else>>
+        <<if $relationshipLevel == 3>>
+            Farmer Jill: Keep fighting the man, man.
+        <<else>>
+            Farmer Jill: Sorry, deary, I just want some time to relax right now.
+        <<endif>>
+    <<endif>>
+-> You: I want to give you something.
+    Farmer Jill: I'm glad to get something from you.
+    <<OpenInventory 1>>
+    <<stop>>
+-> You: Nevermind.
+<<EndConversation>>
 ===
 title: FarmerJill1
 position: -418,895
 ---
+You: What's a farmer like you doing in a city park?
+Farmer Jill: I just dropped off my latest crop at the nearby grocer, and I just wanted some time to relax.
+-> You: Must have been some hard work.
+    Farmer Jill: It's tough, but it's honest work.
+    <<RewardRelationshipPoints 2 1>>
+-> You: Why don't you relax at your farm?
+    Farmer Jill: Sometimes I like to sight see.
+Farmer Jill: I'm sure you know what hard work is with your hard hat and all.
+You: Yeah, I'm actually on break now.
+Actually, I think I'm on litter duty.
+Farmer Jill: You should know how important breaks are, doll.
+Farmer Jill: To work day after day would break you and me.
+You: That wouldn't be good.
+Farmer Jill: No it wouldn't.
+I found a connection between Farmer Jill and I.
+I feel like I'm closer to Farmer Jill.
+<<RelationshipLevelUp 2>>
+<<EndConversation>>
 ===
 title: FarmerJill2
 position: -204,895
 ---
+You: So, how's your farm like?
+Farmer Jill: Not too unlike other farms. I have the crops and the tools to harvest them.
+Farmer Jill: I also have a few critters, but they're not for eating.
+-> You: You could make so much more if you harvested livestock.
+    Farmer Jill: Look here, boy. When I say they're not for eating, they're not for eating.
+-> You: Like what?
+    Farmer Jill: Well, there's Porkins the pig, Bessie the Cow...
+    <<RewardRelationshipPoints 2 1>>
+    She's listing out every single farm animal she has. She could make more money if she harvested them, but she's choosing not to.
+Farmer Jill: These critters make working on the ranch worth while.
+Farmer Jill: Although I know that I'm feeding so many people, seeing the faces of my critters is more rewarding.
+Farmer Jill: It's not like the people I feed will thank me.
+Farmer Jill: People like you and me are the backbone that so many people rely on but hardly any of them give us the time of day.
+Farmer Jill: They hardly notice us. But when they do, we're just a bother.
+Farmer Jill: But, if we're gone everything comes to a crawl.
+You: Facts.
+Farmer Jill spoke her mind to me.
+I feel like I'm closer to Farmer Jill.
+<<RelationshipLevelUp 2>>
+<<EndConversation>>
 ===
 title: FarmerJill3
 position: 29,895
 ---
+You: Thank you.
+Farmer Jill: For what, doll?
+You: If it wasn't for your crops, I wouldn't have lunch today.
+You: Or tomorrow.
+You: Or the day after.
+You: Or the day after that.
+Farmer Jill: I get it, doll. But what made you want to thank me?
+You: It's about time people started thanking you.
+You: And I still want to be able to easily get food.
+Farmer Jill: You didn't have to.
+Farmer Jill: I should thank you.
+Farmer Jill: Without the roads you build, I wouldn't have been able to deliver my crop.
+You: I guess backbones have backbones.
+Farmer Jill: I guess we all do. Don't forget to thank the people you rely on, doll.
+You: I won't.
+Farmer Jill and I had a heart to heart.
+I feel like I'm as close as I'll ever be with Farmer Jill.
+<<RelationshipLevelUp 2>>
+<<EndConversation>>
 ===
 title: FarmerJillGratitude
 position: 475,746
@@ -262,7 +668,7 @@ position: 475,746
 FarmerJill: Aww, doll, you didn't have to do this!
 You: My pleasure.
 It seems it touched her heart.
-<<RewardRelationshipPoints 4 3>>
+<<RewardRelationshipPoints 2 3>>
 <<EndConversation>>
 ===
 title: FarmerJillSatisfied
@@ -270,7 +676,7 @@ position: 249,746
 ---
 Farmer Jill: Thank you, doll.
 She's being modest. I guess it didn't have much of an impact.
-<<RewardRelationshipPoints 4 1>>
+<<RewardRelationshipPoints 2 1>>
 <<EndConversation>>
 ===
 title: FarmerJillDisgratitude
@@ -279,7 +685,7 @@ position: 29,746
 Farmer Jill: You know boy! Why I oughta-
 You: Sorry! Sorry.
 I do not want to get on her bad side.
-<<RewardRelationshipPoints 4 -1>>
+<<RewardRelationshipPoints 2 -1>>
 <<EndConversation>>
 ===
 title: FarmerJillNevermind

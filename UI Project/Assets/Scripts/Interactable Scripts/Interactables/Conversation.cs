@@ -233,9 +233,14 @@ public class Conversation : MonoBehaviour, Interactable
 
     public int GetSpecificThreshold(int level)
     {
+        Debug.Log(level);
         if(level < 0)
         {
             return 0;
+        }
+        if (level >= levelUpThresholds.Count)
+        {
+            return levelUpThresholds[levelUpThresholds.Count - 1];
         }
         return levelUpThresholds[level];
     }
