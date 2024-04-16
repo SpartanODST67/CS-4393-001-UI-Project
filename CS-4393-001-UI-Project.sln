@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI Project", "UI Project", "{A4A7AB92-C79D-4075-88D3-A2A95D50DF87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{37842134-1FE4-42F0-A9E5-D2FAD98BA219}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PackageCache", "PackageCache", "{70A85DB3-1938-4769-866D-53B2156878AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dev.yarnspinner.unity@abe45d8230", "dev.yarnspinner.unity@abe45d8230", "{B5CD82E0-7484-44EE-AB8E-379EE6DB3103}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Editor", "Editor", "{4A491CAE-3A9F-4D08-A774-F4D0F85A55D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analysis", "Analysis", "{187521F9-E06B-4123-B7FF-079A569332BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "UI Project\Library\PackageCache\dev.yarnspinner.unity@abe45d8230\Editor\Analysis\ActionsRegistrationGenerator~\Generator.csproj", "{6444C2E2-ACB9-4106-B770-2A5A4AD374D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6444C2E2-ACB9-4106-B770-2A5A4AD374D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6444C2E2-ACB9-4106-B770-2A5A4AD374D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6444C2E2-ACB9-4106-B770-2A5A4AD374D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6444C2E2-ACB9-4106-B770-2A5A4AD374D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37842134-1FE4-42F0-A9E5-D2FAD98BA219} = {A4A7AB92-C79D-4075-88D3-A2A95D50DF87}
+		{70A85DB3-1938-4769-866D-53B2156878AC} = {37842134-1FE4-42F0-A9E5-D2FAD98BA219}
+		{B5CD82E0-7484-44EE-AB8E-379EE6DB3103} = {70A85DB3-1938-4769-866D-53B2156878AC}
+		{4A491CAE-3A9F-4D08-A774-F4D0F85A55D6} = {B5CD82E0-7484-44EE-AB8E-379EE6DB3103}
+		{187521F9-E06B-4123-B7FF-079A569332BB} = {4A491CAE-3A9F-4D08-A774-F4D0F85A55D6}
+		{6444C2E2-ACB9-4106-B770-2A5A4AD374D6} = {187521F9-E06B-4123-B7FF-079A569332BB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED47F903-BADA-4B1D-968B-75F57F92B15A}
+	EndGlobalSection
+EndGlobal
