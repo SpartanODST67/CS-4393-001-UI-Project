@@ -506,7 +506,7 @@ MonoBehaviour:
   isLevelUpReady: 0
   isMaxLevel: 0
   withdrawRate: 5
-  levelUpThresholds: 010000000200000003000000
+  levelUpThresholds: 0a000000140000001e000000
   likedGifts:
   - {fileID: 7410588410386432315, guid: d4aad972a3977924abd3babc486822ed, type: 3}
   - {fileID: 1629215136381488302, guid: d9d25c7db34f3ab4991d207cfe5fa50b, type: 3}

@@ -577,11 +577,11 @@ Farmer Jill: Oh, hello, Darling.
         <<elseif $relationshipLevel == 2>>
             <<jump FarmerJill3>>
         <<else>>
-            Farmer Jill: Keep fighting the man, man.
+            Farmer Jill: Keep working hard out there, y'hear?
         <<endif>>
     <<else>>
         <<if $relationshipLevel == 3>>
-            Farmer Jill: Keep fighting the man, man.
+            Farmer Jill: Keep working hard out there, y'hear?
         <<else>>
             Farmer Jill: Sorry, deary, I just want some time to relax right now.
         <<endif>>
