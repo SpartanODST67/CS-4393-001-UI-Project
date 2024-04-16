@@ -44,16 +44,36 @@ public class SaveGameManager : MonoBehaviour
             newButton.SetStatusNotification(saveStatusText);
             newButton.GetButton().onClick.AddListener(() =>
             {
-                SaveSystem.instance.SetFileName(newButton.fileName);
-                try
+                if (!newGame)
                 {
-                    SaveSystem.instance.SaveGame();
-                } catch(Exception e)
-                {
-                    newButton.ShowStatusFailure();
-                    return;
+                    SaveSystem.instance.SetFileName(newButton.fileName);
+                    try
+                    {
+                        SaveSystem.instance.SaveGame();
+                    }
+                    catch (Exception e)
+                    {
+                        newButton.ShowStatusFailure();
+                        return;
+                    }
+                    newButton.ShowStatusSuccess();
                 }
-                newButton.ShowStatusSuccess();
+                else
+                {
+                    newSaveButton.GetInventory().InitializeInventory();
+                    newSaveButton.GetRelationshipBank().InitializeRelationshipBank();
+                    try
+                    {
+                        SaveSystem.instance.SaveGame();
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogException(e);
+                        newSaveButton.ShowStatusFailure();
+                        return;
+                    }
+                    SceneManager.LoadScene("SampleScene");
+                }
             });
             yield return null;
         }
