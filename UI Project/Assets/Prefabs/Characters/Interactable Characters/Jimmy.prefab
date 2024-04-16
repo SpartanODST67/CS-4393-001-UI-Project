@@ -341,16 +341,21 @@ MonoBehaviour:
   relationshipLevel: 0
   relationshipPoints: 0
   characterName: Jimmy
-  characterDescription: Rage against the machine, in theory. He has his heart in
-    the right place.
+  characterDescription: Rage against the machine. He has his heart in the right place.
   isQuestComplete: 0
   isOnTeam: 0
   isLevelUpReady: 0
   isMaxLevel: 0
   withdrawRate: 5
   levelUpThresholds: 010000000200000003000000
-  likedGifts: []
-  dislikedGifts: []
+  likedGifts:
+  - {fileID: 4208366310868905394, guid: 78ccd0371ecbd434cba9d5f173dc8695, type: 3}
+  - {fileID: 8872994725710288075, guid: bb1cfbb552948174ca10dae9d88478c6, type: 3}
+  - {fileID: 6834182491122157807, guid: 215fcf314548adf4ab94d25921b9ccab, type: 3}
+  dislikedGifts:
+  - {fileID: 793286407327304744, guid: 6d7af82770cf1f7419e3e08e6c0a1ebe, type: 3}
+  - {fileID: 2627050621293502570, guid: 30fa8d7c57054df42a101b81fb07fca3, type: 3}
+  - {fileID: 8856463807266051439, guid: 63d2051396c230048b8ee1d805a0a28f, type: 3}
   dialogueRunner: {fileID: 0}
   storage: {fileID: 0}
   relationshipBank: {fileID: 11400000, guid: 746d1f01c32ef9548b1af342c34438ed, type: 2}

@@ -83,8 +83,8 @@ MonoBehaviour:
   itemID: 7
   itemName: Banana
   itemDescription: One of the most radioactive fruits.
-  buyPrice: 0
-  sellPrice: 0
+  buyPrice: 4
+  sellPrice: 2
   inventory: {fileID: 11400000, guid: 69c692dfa0ee0e741bc61696cb275b94, type: 2}
   myselfPrefab: {fileID: 2212728435818000685}
   pickUpNotification: {fileID: 4533137461378125189, guid: d1fbeb35e99ad0345be2eea7600920bc, type: 3}

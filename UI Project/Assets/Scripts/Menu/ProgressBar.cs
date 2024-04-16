@@ -45,7 +45,14 @@ public class ProgressBar : MonoBehaviour
 
     private void SetProgress()
     {
-        progress = (float) (currentValue - minValue) / (maxValue - minValue);
+        if (maxValue - minValue == 0)
+        {
+            progress = 1;
+        }
+        else
+        {
+            progress = (float)(currentValue - minValue) / (maxValue - minValue);
+        }
         DisplayProgress();
     }
 

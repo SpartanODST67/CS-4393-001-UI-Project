@@ -84,7 +84,7 @@ MonoBehaviour:
   itemID: 40
   itemName: ??? Cube
   itemDescription: 0x48 0x65 0x6C 0x6C 0x6F 0x20 0x57 0x 0x6F 0x72 0x6C 0x64
-  buyPrice: 0
+  buyPrice: 9999
   sellPrice: 0
   inventory: {fileID: 11400000, guid: 69c692dfa0ee0e741bc61696cb275b94, type: 2}
   myselfPrefab: {fileID: 7106600771770491506}
