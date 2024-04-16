@@ -95,8 +95,8 @@ MonoBehaviour:
   itemID: 21
   itemName: Crown
   itemDescription: Reminds me of peaches and daisies.
-  buyPrice: 0
-  sellPrice: 0
+  buyPrice: 100
+  sellPrice: 90
   inventory: {fileID: 11400000, guid: 69c692dfa0ee0e741bc61696cb275b94, type: 2}
   myselfPrefab: {fileID: 4196163979879261144}
   pickUpNotification: {fileID: 4533137461378125189, guid: d1fbeb35e99ad0345be2eea7600920bc, type: 3}

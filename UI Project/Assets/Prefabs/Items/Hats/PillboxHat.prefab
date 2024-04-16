@@ -83,8 +83,8 @@ MonoBehaviour:
   itemID: 26
   itemName: Pillbox Hat
   itemDescription: Whoever this belongs to has a... unique... sense of style.
-  buyPrice: 0
-  sellPrice: 0
+  buyPrice: 90
+  sellPrice: 80
   inventory: {fileID: 11400000, guid: 69c692dfa0ee0e741bc61696cb275b94, type: 2}
   myselfPrefab: {fileID: 1810238417913203623}
   pickUpNotification: {fileID: 4533137461378125189, guid: d1fbeb35e99ad0345be2eea7600920bc, type: 3}

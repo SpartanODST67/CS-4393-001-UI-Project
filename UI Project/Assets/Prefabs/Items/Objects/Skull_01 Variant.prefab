@@ -95,7 +95,7 @@ MonoBehaviour:
   itemID: 37
   itemName: Skull
   itemDescription: To be, or not to be. That is the question.
-  buyPrice: 0
+  buyPrice: 9999
   sellPrice: 0
   inventory: {fileID: 11400000, guid: 69c692dfa0ee0e741bc61696cb275b94, type: 2}
   myselfPrefab: {fileID: 8242014735788105479}
