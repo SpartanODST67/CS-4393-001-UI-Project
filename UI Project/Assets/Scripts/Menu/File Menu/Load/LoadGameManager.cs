@@ -23,18 +23,21 @@ public class LoadGameManager : MonoBehaviour
             yield return null;
         }
 
-        foreach (string file in saveFiles)
+        if (saveFiles != null)
         {
-            LoadSaveFile newButton = Instantiate(loadButtonPrefab, transform).GetComponent<LoadSaveFile>();
-            string[] fileNameSplit = file.Split("/");
-            string fileName = fileNameSplit[fileNameSplit.Length - 1];
-            newButton.SetFileName(fileName);
-            newButton.GetButton().onClick.AddListener(() =>
+            foreach (string file in saveFiles)
             {
-                SaveSystem.instance.SetFileName(newButton.fileName);
-                confirmationScript.SetLoadFile(newButton.fileName);
-                confirmationScript.gameObject.SetActive(true);
-            });
+                LoadSaveFile newButton = Instantiate(loadButtonPrefab, transform).GetComponent<LoadSaveFile>();
+                string[] fileNameSplit = file.Split("/");
+                string fileName = fileNameSplit[fileNameSplit.Length - 1];
+                newButton.SetFileName(fileName);
+                newButton.GetButton().onClick.AddListener(() =>
+                {
+                    SaveSystem.instance.SetFileName(newButton.fileName);
+                    confirmationScript.SetLoadFile(newButton.fileName);
+                    confirmationScript.gameObject.SetActive(true);
+                });
+            }
         }
     }
 }

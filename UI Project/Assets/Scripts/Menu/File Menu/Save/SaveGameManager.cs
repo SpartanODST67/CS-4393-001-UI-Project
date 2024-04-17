@@ -34,48 +34,51 @@ public class SaveGameManager : MonoBehaviour
             yield return null;
         }
 
-        foreach (string file in saveFiles)
+        if (saveFiles != null)
         {
-            ExistingSaveFile newButton = Instantiate(existingSaveButton, transform).GetComponent<ExistingSaveFile>();
-            string[] filePathSplit = file.Split("/");
-            string fileName = filePathSplit[filePathSplit.Length - 1];
-            fileNames.Add(fileName);
-            newButton.SetFileName(fileName);
-            newButton.SetStatusNotification(saveStatusText);
-            newButton.GetButton().onClick.AddListener(() =>
+            foreach (string file in saveFiles)
             {
-                if (!newGame)
+                ExistingSaveFile newButton = Instantiate(existingSaveButton, transform).GetComponent<ExistingSaveFile>();
+                string[] filePathSplit = file.Split("/");
+                string fileName = filePathSplit[filePathSplit.Length - 1];
+                fileNames.Add(fileName);
+                newButton.SetFileName(fileName);
+                newButton.SetStatusNotification(saveStatusText);
+                newButton.GetButton().onClick.AddListener(() =>
                 {
-                    SaveSystem.instance.SetFileName(newButton.fileName);
-                    try
+                    if (!newGame)
                     {
-                        SaveSystem.instance.SaveGame();
+                        SaveSystem.instance.SetFileName(newButton.fileName);
+                        try
+                        {
+                            SaveSystem.instance.SaveGame();
+                        }
+                        catch (Exception e)
+                        {
+                            newButton.ShowStatusFailure();
+                            return;
+                        }
+                        newButton.ShowStatusSuccess();
                     }
-                    catch (Exception e)
+                    else
                     {
-                        newButton.ShowStatusFailure();
-                        return;
+                        newSaveButton.GetInventory().InitializeInventory();
+                        newSaveButton.GetRelationshipBank().InitializeRelationshipBank();
+                        try
+                        {
+                            SaveSystem.instance.SaveGame();
+                        }
+                        catch (Exception e)
+                        {
+                            Debug.LogException(e);
+                            newSaveButton.ShowStatusFailure();
+                            return;
+                        }
+                        SceneManager.LoadScene("SampleScene");
                     }
-                    newButton.ShowStatusSuccess();
-                }
-                else
-                {
-                    newSaveButton.GetInventory().InitializeInventory();
-                    newSaveButton.GetRelationshipBank().InitializeRelationshipBank();
-                    try
-                    {
-                        SaveSystem.instance.SaveGame();
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogException(e);
-                        newSaveButton.ShowStatusFailure();
-                        return;
-                    }
-                    SceneManager.LoadScene("SampleScene");
-                }
-            });
-            yield return null;
+                });
+                yield return null;
+            }
         }
 
         string newFileName = "file" + fileNames.Count.ToString() + ".csv";
@@ -91,7 +94,7 @@ public class SaveGameManager : MonoBehaviour
             try
             {
                 SaveSystem.instance.SaveGame();
-                if(!newGame)
+                if (!newGame)
                 {
                     newSaveButton.ShowStatusSuccess();
                 }
