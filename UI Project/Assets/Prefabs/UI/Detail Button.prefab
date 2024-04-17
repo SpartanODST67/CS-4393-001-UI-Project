@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4052795981397588126}
+  - component: {fileID: 1921167111372509672}
   - component: {fileID: 7353282866641949431}
   - component: {fileID: 341775245372695367}
   - component: {fileID: 6602999762815045541}
-  - component: {fileID: 2812840172226954374}
   - component: {fileID: 355366878072740373}
-  - component: {fileID: 1921167111372509672}
   m_Layer: 5
   m_Name: Detail Button
   m_TagString: Untagged
@@ -42,6 +41,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 525, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1921167111372509672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6037322325262125232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724c8683d9099f14cb465a1e10dce7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detail: Hello World
+  detailInformation: Hello World
+  myText: {fileID: 3265036812258595643}
+  myButton: {fileID: 6602999762815045541}
+  detailsPage: {fileID: 0}
+  detailTitle: {fileID: 0}
+  detailInformationDisplay: {fileID: 0}
 --- !u!222 &7353282866641949431
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -124,18 +142,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2812840172226954374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6037322325262125232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e2c2939500c7b48968b0c51035015c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &355366878072740373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,25 +195,6 @@ MonoBehaviour:
   m_CallbackOnHighlight:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1921167111372509672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6037322325262125232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724c8683d9099f14cb465a1e10dce7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detail: Hello World
-  detailInformation: Hello World
-  myText: {fileID: 3265036812258595643}
-  myButton: {fileID: 6602999762815045541}
-  detailsPage: {fileID: 0}
-  detailTitle: {fileID: 0}
-  detailInformationDisplay: {fileID: 0}
 --- !u!1 &7762387193931399894
 GameObject:
   m_ObjectHideFlags: 0
