@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
 
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    [SerializeField] GameObject inputHander;
+    [SerializeField] GameObject dialogueRunner;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +29,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume(){
     pauseMenuUI.SetActive(false);
-    Time.timeScale = 1f;
-    gameIsPaused = false;
+        inputHander.SetActive(true);
+        dialogueRunner.SetActive(true);
+        gameIsPaused = false;
 }
 
     public void Pause(){
     pauseMenuUI.SetActive(true);
-    Time.timeScale = 0f;
-    gameIsPaused = true;
+        inputHander.SetActive(false);
+        dialogueRunner.SetActive(false);
+        gameIsPaused = true;
 }
 }
 
